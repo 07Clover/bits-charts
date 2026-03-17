@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bit's Charts | Home</title>
+    <link rel="icon" type="image/png" href="zkp/img/logo.png">
+    <link rel="stylesheet" href="zkp/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="zkp/img/logo.png" alt="Logo" class="logo-img">
+            <a href="index.html" class="logo-text">Bit's Charts</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="zkp/mods.html">Mods</a></li>
+            <li><a href="zkp/install.html">Install</a></li>
+            <li><a href="#">Forum</a></li>
+            <li><a href="zkp/credits.html">Credits</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+            <div class="shape shape-6"></div>
+            <div class="shape shape-7"></div>
+        </div>
+        <div class="hero-media">
+            <img src="zkp/img/bf-fnf-boyfriend.gif" alt="Boyfriend FNF" class="hero-gif">
+        </div>
+        <div class="hero-content">
+            <span class="hero-eyebrow">Friday Night Funkin' Charts</span>
+            <h1 class="title">Bit's <span>Charts</span></h1>
+            <p class="subtitle">The best FNF charts made for you!</p>
+            <div class="hero-buttons">
+                <a href="zkp/mods.html" class="btn btn-primary">View All Mods</a>
+                <a href="zkp/install.html" class="btn btn-secondary">How to Install</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="recent-mods">
+        <h2>Latest Mods</h2>
+        <div class="layout-bottom">
+            <!-- CARD: Pico 4th Song -->
+            <div class="card card-small" onclick="location.href='zkp/mods/pico-4th-song.html'">
+                <div class="image-placeholder" style="background-image:url('zkp/img/mods/pico-4th-song.jpg');background-size:cover;background-position:center;"></div>
+                <div class="card-info"><h4>Pico 4th Song <span class="diff-badge diff-erect">ERECT</span></h4></div>
+            </div>
+            <!-- COPIA ESTE BLOQUE PARA MAS MODS:
+            <div class="card card-small" onclick="location.href='zkp/mods/tu-mod.html'">
+                <div class="image-placeholder" style="background-image:url('zkp/img/mods/tu-mod.jpg');background-size:cover;background-position:center;"></div>
+                <div class="card-info"><h4>Nombre del Mod</h4></div>
+            </div>
+            -->
+        </div>
+        <div class="view-all-container">
+            <a href="zkp/mods.html" class="view-all-link">>> View All Mods</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="https://www.youtube.com/@mq-bit" class="footer-link" target="_blank">> YouTube</a>
+            <a href="https://x.com/0CloverSp" class="footer-link" target="_blank">> X (Twitter)</a>
+        </div>
+        <p>&copy; 2026 Bit's Charts. All rights reserved.</p>
+    </footer>
+
+    <div class="commissions-popup" id="commPopup">
+        <button class="popup-close" onclick="document.getElementById('commPopup').style.display='none'">x close</button>
+        <h4>Commissions Open!</h4>
+        <p>I make charts and code for Friday Night Funkin'. Need help with your mod?</p>
+        <a href="https://linktr.ee/qm_Bit" class="commission-btn" target="_blank">> Hit me up on Discord!</a>
+    </div>
+
+</body>
+</html>
