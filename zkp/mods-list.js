@@ -8,7 +8,7 @@ const MODS_LIST = [
     "mods/pause.html",
     "mods/cocoa-gf-mix.html",
     "mods/green.html",
-    "mods/titular-2026.html",
+    "mods/stickmin-in-2026.html",
     "mods/wheel-space.html",
     // agrega aquí los que faltan en el futuro
 ];
