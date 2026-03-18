@@ -13,6 +13,26 @@
     <meta property="og:url" content="https://bitsasshole.github.io/bits-charts">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
+    <style>
+        .layout-bottom .card {
+            animation: cardFloat 3s ease-in-out infinite;
+        }
+        .layout-bottom .card:nth-child(1)  { animation-delay: 0s;    }
+        .layout-bottom .card:nth-child(2)  { animation-delay: 0.2s;  }
+        .layout-bottom .card:nth-child(3)  { animation-delay: 0.4s;  }
+        .layout-bottom .card:nth-child(4)  { animation-delay: 0.6s;  }
+        .layout-bottom .card:nth-child(5)  { animation-delay: 0.8s;  }
+        .layout-bottom .card:nth-child(6)  { animation-delay: 1.0s;  }
+        .layout-bottom .card:nth-child(7)  { animation-delay: 1.2s;  }
+        .layout-bottom .card:nth-child(8)  { animation-delay: 1.4s;  }
+        .layout-bottom .card:nth-child(9)  { animation-delay: 1.6s;  }
+        .layout-bottom .card:nth-child(10) { animation-delay: 1.8s;  }
+        .layout-bottom .card:nth-child(11) { animation-delay: 2.0s;  }
+        @keyframes cardFloat {
+            0%, 100% { transform: translateY(0px);  }
+            50%       { transform: translateY(-5px); }
+        }
+    </style>
 </head>
 <body>
 
@@ -54,7 +74,7 @@
     </header>
 
     <section class="recent-mods">
-        <h2>Latest Mods</h2>
+        <h2>Fan Favorites</h2>
         <div class="layout-bottom">
             <!-- CARD: 2ND HALF -->
             <div class="card card-small" onclick="location.href='zkp/mods/2nd-half.html'">
@@ -116,7 +136,7 @@
             <!-- CARD: Pico 4th Song -->
             <div class="card card-small" onclick="location.href='zkp/mods/pico-4th-song.html'">
                 <div class="image-placeholder" style="background-image:url('zkp/img/mods/pico-4th-song.jpg');background-size:cover;background-position:center;"></div>
-                <div class="card-info"><h4>Pico 4th Song <span class="diff-badge diff-erect">ERECT</span></h4></div>
+                <div class="card-info"><h4>Pico 4th Song <span class="diff-badge diff-hard">HARD</span></h4></div>
             </div>
             <!-- COPIA ESTE BLOQUE PARA MAS MODS:
             <div class="card card-small" onclick="location.href='zkp/mods/tu-mod.html'">
