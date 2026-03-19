@@ -450,6 +450,7 @@ body.scrollable .container { padding-bottom: 5rem; }
 .cdot:hover { background: var(--secondary); }
 
 
+
 /* ══════════════════════════════════════
    MOBILE RESPONSIVE
 ══════════════════════════════════════ */
@@ -458,22 +459,31 @@ body.scrollable .container { padding-bottom: 5rem; }
 
     html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
 
-    /* ── NAVBAR ── */
+    /* ── NAVBAR — logo only, links fill rest ── */
     .navbar {
         height: auto !important;
-        padding: 0.5rem 0.8rem !important;
+        padding: 0.6rem 1rem !important;
         flex-wrap: nowrap !important;
         justify-content: space-between;
+        gap: 0.5rem;
     }
-    .nav-logo { gap: 0.4rem; flex-shrink: 0; }
-    .logo-img  { width: 2rem !important; height: 2rem !important; }
-    .logo-text { font-size: 0.85rem !important; letter-spacing: 0 !important; }
-    .nav-links { gap: 0 !important; flex-wrap: nowrap !important; }
+    .nav-logo { gap: 0; flex-shrink: 0; }
+    .logo-img  { width: 2.4rem !important; height: 2.4rem !important; }
+    .logo-text { display: none !important; }
+    .nav-links {
+        gap: 0 !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-end;
+        flex: 1;
+    }
+    .nav-links li { flex: 1; text-align: center; }
     .nav-links li a {
-        font-size: 0.68rem !important;
-        padding: 0.25rem 0.4rem !important;
+        font-size: 0.75rem !important;
+        padding: 0.3rem 0.2rem !important;
         letter-spacing: 0 !important;
         white-space: nowrap;
+        display: block;
+        text-align: center;
     }
     .nav-links li a::before { display: none; }
 
@@ -488,48 +498,34 @@ body.scrollable .container { padding-bottom: 5rem; }
     }
     .hero-media  { display: none !important; }
     .hero-shapes { display: none !important; }
-    .hero-content { max-width: 100% !important; position: relative; z-index: 5; }
+    .hero-content { max-width: 100% !important; }
     .title        { font-size: clamp(2rem, 8vw, 3rem) !important; line-height: 1.1; }
     .hero-eyebrow { font-size: 0.7rem !important; }
     .subtitle     { font-size: 0.9rem !important; }
     .hero-buttons { flex-direction: column !important; gap: 0.5rem; align-items: flex-start; }
-    .btn          { font-size: 0.8rem !important; padding: 0.55rem 1.1rem !important; }
+    .btn          { font-size: 0.85rem !important; padding: 0.6rem 1.2rem !important; }
 
-    /* ── INDEX: no empty space ── */
-    body:not(.scrollable) {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-    body:not(.scrollable) section.recent-mods { flex: 0 0 auto; }
-    body:not(.scrollable) .site-footer {
-        margin-top: auto;
-        position: relative !important;
-        bottom: auto !important;
-    }
-
-    /* ── SCROLLABLE PAGES ── */
-    body.scrollable {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-    body.scrollable .container { flex: 1 0 auto; }
-    body.scrollable .site-footer {
-        flex-shrink: 0;
-        position: relative !important;
-        bottom: auto !important;
-    }
-
-    /* ── HALL OF FAME ── */
-    .recent-mods { padding: 1rem; }
+    /* ── HALL OF FAME — no cutoff ── */
+    .recent-mods { padding: 1rem; overflow: visible !important; }
     .recent-mods h2 { font-size: 1.1rem; margin-bottom: 0.8rem; }
     .layout-bottom {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 0.6rem;
+        overflow: visible !important;
+        height: auto !important;
+        max-height: none !important;
     }
     .layout-bottom .card { animation: none !important; }
+
+    /* ── INDEX empty space fix ── */
+    body:not(.scrollable) { display: flex; flex-direction: column; min-height: 100vh; }
+    body:not(.scrollable) .site-footer { margin-top: auto; position: relative !important; bottom: auto !important; }
+
+    /* ── SCROLLABLE PAGES ── */
+    body.scrollable { display: flex; flex-direction: column; min-height: 100vh; }
+    body.scrollable .container { flex: 1 0 auto; }
+    body.scrollable .site-footer { flex-shrink: 0; position: relative !important; bottom: auto !important; }
 
     /* ── MODS GRID ── */
     .mods-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 0.5rem; }
@@ -538,10 +534,10 @@ body.scrollable .container { padding-bottom: 5rem; }
 
     /* ── CARDS ── */
     .card-info { padding: 0.4rem 0.5rem; }
-    .card-info h4 { font-size: 0.75rem; line-height: 1.3; }
-    .card-info h3 { font-size: 0.8rem; }
+    .card-info h4 { font-size: 0.78rem; line-height: 1.3; }
+    .card-info h3 { font-size: 0.82rem; }
     .card-info p  { font-size: 0.68rem; }
-    .diff-badge   { font-size: 0.58rem; padding: 0.1rem 0.35rem; }
+    .diff-badge   { font-size: 0.6rem; padding: 0.1rem 0.35rem; }
     .image-placeholder { aspect-ratio: 16/9; }
 
     /* ── CONTAINER ── */
@@ -549,61 +545,55 @@ body.scrollable .container { padding-bottom: 5rem; }
     .page-header h1 { font-size: 1.5rem; }
     .page-header .subtitle { font-size: 0.85rem; }
 
-    /* ── MOD PAGE — force stack ── */
-    .mod-layout {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 1rem;
-        width: 100%;
-    }
+    /* ── MOD PAGE ── */
+    .mod-layout { display: flex !important; flex-direction: column !important; gap: 1rem; width: 100%; }
     .mod-main   { width: 100% !important; min-width: 0; }
-    .mod-sidebar {
-        width: 100% !important;
-        min-width: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-    }
-    .mod-banner { height: 48vw !important; min-height: 140px; }
-    .mod-banner-title h1 { font-size: 1.1rem; }
-    .mod-banner-meta { font-size: 0.65rem; flex-wrap: wrap; gap: 0.4rem; }
+    .mod-sidebar { width: 100% !important; min-width: 0; }
 
-    /* video — iframe needs explicit size */
-    .mod-video-wrap {
-        width: 100%;
-        position: relative;
-        padding-top: 56.25%;
-        height: 0;
-        overflow: hidden;
+    /* mod banner title — bigger and readable */
+    .mod-banner { height: 48vw !important; min-height: 150px; }
+    .mod-banner-title {
+        padding: 0.8rem 1rem !important;
     }
-    .mod-video-wrap iframe {
-        position: absolute !important;
-        top: 0; left: 0;
-        width: 100% !important;
-        height: 100% !important;
+    .mod-banner-title h1 {
+        font-size: 1.4rem !important;
+        line-height: 1.2;
+        text-shadow: 2px 2px 0 #000, 3px 3px 8px rgba(0,0,0,0.8) !important;
     }
+    .mod-banner-meta {
+        font-size: 0.72rem !important;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-top: 0.4rem;
+        text-shadow: 1px 1px 4px #000;
+    }
+
+    /* video responsive */
+    .mod-video-wrap { width: 100%; position: relative; padding-top: 56.25%; height: 0; overflow: hidden; }
+    .mod-video-wrap iframe { position: absolute !important; top: 0; left: 0; width: 100% !important; height: 100% !important; }
 
     .song-table { font-size: 0.72rem; }
-    .back-link { font-size: 0.75rem; }
-    .mod-section p { font-size: 0.82rem; line-height: 1.6; }
-    .sidebar-box-label { font-size: 0.72rem; }
-    .sidebar-box-body p { font-size: 0.78rem; }
-    .download-btn { font-size: 0.75rem; padding: 0.5rem 0.8rem; width: 100%; box-sizing: border-box; }
-    .credit-name { font-size: 0.85rem; }
+    .back-link { font-size: 0.8rem; margin-bottom: 0.8rem; display: block; }
+    .mod-section p { font-size: 0.85rem; line-height: 1.6; }
+    .mod-section-label { font-size: 0.7rem; }
+    .sidebar-box-label { font-size: 0.75rem; }
+    .sidebar-box-body p { font-size: 0.8rem; }
+    .download-btn { font-size: 0.78rem; padding: 0.55rem 0.9rem; width: 100%; box-sizing: border-box; }
+    .credit-name { font-size: 0.88rem; }
     .credit-detail { font-size: 0.72rem; }
-    .credit-role-label { font-size: 0.7rem; min-width: 5.5rem; }
+    .credit-role-label { font-size: 0.72rem; min-width: 5.5rem; }
 
     /* ── INSTALL ── */
     .step { padding: 1rem; }
-    .step h3 { font-size: 0.95rem; }
-    .step p  { font-size: 0.82rem; line-height: 1.6; }
+    .step h3 { font-size: 1rem; }
+    .step p  { font-size: 0.85rem; line-height: 1.6; }
     .code-block { font-size: 0.65rem; word-break: break-all; padding: 0.5rem; }
-    .engine-btn { font-size: 0.75rem; padding: 0.5rem 1rem; }
+    .engine-btn { font-size: 0.78rem; padding: 0.55rem 1rem; }
 
-    /* ── CREDITS ── */
-    .credits-mod-header h2 { font-size: 0.85rem; }
+    /* ── CREDITS popup fix — dont cover text ── */
+    .credits-mod-header h2 { font-size: 0.88rem; }
 
-    /* ── POPUP — bottom, doesnt cover content ── */
+    /* ── POPUP — hidden on scrollable pages unless closed ── */
     .commissions-popup {
         position: fixed !important;
         width: 88vw !important;
@@ -614,8 +604,7 @@ body.scrollable .container { padding-bottom: 5rem; }
         transform: none !important;
         animation: slideUpMobile 0.5s ease forwards !important;
         font-size: 0.85rem;
-        max-height: 50vh;
-        overflow-y: auto;
+        z-index: 999;
     }
     @keyframes slideUpMobile {
         from { opacity: 0; transform: translateY(80px); }

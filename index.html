@@ -22,19 +22,12 @@
             0%, 100% { transform: translateY(0px);  }
             50%       { transform: translateY(-5px); }
         }
-        /* index-specific: footer static, body scrollable */
-        body { display: flex; flex-direction: column; min-height: 100vh; }
-        .recent-mods { flex: 1; }
-        .site-footer { position: relative; margin-top: auto; }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="nav-logo">
-            <img src="zkp/img/logo.png" alt="Logo" class="logo-img">
-            <a href="index.html" class="logo-text">Bit's Charts</a>
-        </div>
+        <div class="nav-logo"><a href="index.html"><img src="zkp/img/logo.png" alt="Logo" class="logo-img"></a><a href="index.html" class="logo-text">Bit's Charts</a></div>
         <ul class="nav-links">
             <li><a href="zkp/mods.html">Mods</a></li>
             <li><a href="zkp/install.html">Install</a></li>
@@ -87,9 +80,6 @@
                 <div class="card-info"><h4>Corruption Minipack <span class="diff-badge diff-erect">ERECT</span></h4></div>
             </div>
         </div>
-        <div class="view-all-container">
-            <a href="zkp/mods.html" class="view-all-link">>> View All Mods</a>
-        </div>
     </section>
 
     <footer class="site-footer">
@@ -107,34 +97,5 @@
         <p>I make charts and code for Friday Night Funkin'. Need help with your mod?</p>
         <a href="https://linktr.ee/qm_Bit" class="commission-btn" target="_blank">> Hit me up on Discord!</a>
     </div>
-
-    <script>
-    (function() {
-        var popup = document.getElementById('commPopup');
-        var handle = document.getElementById('popupHandle');
-        if (!popup || !handle) return;
-        var drag = false, ox = 0, oy = 0;
-        handle.addEventListener('mousedown', function(e) {
-            var r = popup.getBoundingClientRect();
-            popup.style.transform = 'none';
-            popup.style.top = r.top + 'px';
-            popup.style.left = r.left + 'px';
-            popup.style.right = 'auto';
-            popup.style.bottom = 'auto';
-            drag = true;
-            ox = e.clientX - r.left;
-            oy = e.clientY - r.top;
-            e.preventDefault();
-        });
-        document.addEventListener('mousemove', function(e) {
-            if (drag) {
-                popup.style.left = (e.clientX - ox) + 'px';
-                popup.style.top  = (e.clientY - oy) + 'px';
-            }
-        });
-        document.addEventListener('mouseup', function() { drag = false; });
-    })();
-    </script>
-
 </body>
 </html>
