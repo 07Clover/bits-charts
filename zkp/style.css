@@ -452,6 +452,7 @@ body.scrollable .container { padding-bottom: 5rem; }
 
 
 
+
 /* ══════════════════════════════════════
    MOBILE RESPONSIVE
 ══════════════════════════════════════ */
@@ -461,6 +462,15 @@ body.scrollable .container { padding-bottom: 5rem; }
     html { overflow-x: hidden; }
     body { overflow-x: hidden; width: 100%; max-width: 100vw; }
 
+    /* ── CRITICAL: force dark bg after hero ── */
+    .recent-mods,
+    .site-footer,
+    .view-all-container {
+        background: var(--bg) !important;
+        position: relative;
+        z-index: 2;
+    }
+
     /* ── NAVBAR ── */
     .navbar {
         height: auto !important;
@@ -468,6 +478,8 @@ body.scrollable .container { padding-bottom: 5rem; }
         flex-wrap: nowrap !important;
         justify-content: space-between;
         gap: 0.5rem;
+        position: relative;
+        z-index: 100;
     }
     .nav-logo { gap: 0; flex-shrink: 0; }
     .logo-img  { width: 2.4rem !important; height: 2.4rem !important; }
@@ -484,7 +496,7 @@ body.scrollable .container { padding-bottom: 5rem; }
     }
     .nav-links li a::before { display: none; }
 
-    /* ── HERO — fix yellow overflow ── */
+    /* ── HERO ── */
     .hero {
         overflow: hidden !important;
         min-height: unset !important;
@@ -492,6 +504,8 @@ body.scrollable .container { padding-bottom: 5rem; }
         padding: 1.5rem 1.2rem 2rem !important;
         box-sizing: border-box !important;
         max-width: 100vw !important;
+        position: relative;
+        z-index: 1;
     }
     .hero-media  { display: none !important; }
     .hero-shapes { display: none !important; }
@@ -502,38 +516,31 @@ body.scrollable .container { padding-bottom: 5rem; }
     .hero-buttons { flex-direction: column !important; gap: 0.5rem; align-items: flex-start; }
     .btn          { font-size: 0.9rem !important; padding: 0.6rem 1.2rem !important; }
 
-    /* ── INDEX: fix yellow below cards ── */
-    body:not(.scrollable) {
-        display: block !important;
-        background: var(--bg) !important;
-    }
-    body:not(.scrollable) .site-footer {
-        position: relative !important;
-        bottom: auto !important;
-        margin-top: 0 !important;
-    }
-
     /* ── HALL OF FAME ── */
-    .recent-mods {
-        padding: 1rem;
-        overflow: visible !important;
-        background: var(--bg) !important;
-    }
+    .recent-mods { padding: 1rem; }
     .recent-mods h2 { font-size: 1.1rem; margin-bottom: 0.8rem; }
     .layout-bottom {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 0.6rem;
-        overflow: visible !important;
         height: auto !important;
         max-height: none !important;
     }
     .layout-bottom .card { animation: none !important; }
 
+    /* ── FOOTER ── */
+    .site-footer {
+        position: relative !important;
+        bottom: auto !important;
+        padding: 0.8rem 1rem;
+        font-size: 0.75rem;
+    }
+    .footer-links { gap: 1rem; }
+
     /* ── SCROLLABLE pages ── */
     body.scrollable { display: flex; flex-direction: column; min-height: 100vh; }
     body.scrollable .container { flex: 1 0 auto; }
-    body.scrollable .site-footer { position: relative !important; bottom: auto !important; flex-shrink: 0; }
+    body.scrollable .site-footer { flex-shrink: 0; }
 
     /* ── MODS GRID ── */
     .mods-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 0.5rem; }
@@ -557,20 +564,15 @@ body.scrollable .container { padding-bottom: 5rem; }
     .mod-layout { display: flex !important; flex-direction: column !important; gap: 1rem; width: 100%; }
     .mod-main   { width: 100% !important; min-width: 0; }
     .mod-sidebar { width: 100% !important; min-width: 0; }
-
     .mod-banner { height: 48vw !important; min-height: 150px; }
     .mod-banner-title { padding: 0.8rem 1rem !important; }
     .mod-banner-title h1 { font-size: 1.5rem !important; line-height: 1.2; text-shadow: 2px 2px 0 #000, 0 0 12px rgba(0,0,0,0.9) !important; }
     .mod-banner-meta { font-size: 0.78rem !important; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
-
     .mod-video-wrap { width: 100%; position: relative; padding-top: 56.25%; height: 0; overflow: hidden; margin-bottom: 0.5rem; }
     .mod-video-wrap iframe { position: absolute !important; top: 0; left: 0; width: 100% !important; height: 100% !important; }
-
-    /* mod text bigger */
     .mod-section p { font-size: 0.92rem !important; line-height: 1.7; }
     .mod-section-label { font-size: 0.75rem !important; }
     .song-table { font-size: 0.78rem; width: 100%; }
-    .bpm-val { font-size: 0.82rem; }
     .back-link { font-size: 0.82rem; margin-bottom: 0.8rem; display: block; }
     .sidebar-box-label { font-size: 0.78rem; }
     .sidebar-box-body p { font-size: 0.85rem; }
@@ -606,8 +608,4 @@ body.scrollable .container { padding-bottom: 5rem; }
         from { opacity: 0; transform: translateY(80px); }
         to   { opacity: 1; transform: translateY(0); }
     }
-
-    /* ── FOOTER ── */
-    .site-footer { padding: 0.8rem 1rem; font-size: 0.75rem; }
-    .footer-links { gap: 1rem; }
 }
