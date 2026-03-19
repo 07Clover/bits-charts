@@ -81,7 +81,7 @@ body::after {
 }
 .hero-content {
     position: absolute; left: 4%; top: 50%; transform: translateY(-50%);
-    z-index: 5; text-align: left; max-width: 45%;
+    z-index: 0; text-align: left; max-width: 45%;
 }
 .hero-eyebrow {
     font-family: 'SSS', monospace; font-size: 0.65rem; letter-spacing: 4px;
@@ -547,11 +547,13 @@ body.scrollable .container { padding-bottom: 5rem; }
     .site-footer {
         position: relative !important;
         bottom: auto !important;
-        margin-top: 0 !important;
-        padding: 0.9rem 1rem;
-        font-size: 0.78rem;
+        height: auto !important;
+        padding: 1.5rem 1.5rem !important;
+        font-size: 0.85rem;
     }
-    .footer-links { gap: 1.2rem; }
+    .footer-links { gap: 1.5rem; margin-bottom: 0.5rem; }
+    .footer-link { font-size: 0.9rem !important; }
+    .site-footer p { font-size: 0.72rem !important; }
 
     /* ── SCROLLABLE pages ── */
     body.scrollable {
