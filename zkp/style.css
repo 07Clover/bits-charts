@@ -454,119 +454,132 @@ body.scrollable .container { padding-bottom: 5rem; }
 
 @media (max-width: 768px) {
 
-    /* ── BODY / HTML ── */
-    html, body { overflow-x: hidden; width: 100%; }
+    /* ── BASE ── */
+    html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
 
-    /* ── HERO — fix yellow overflow ── */
+    /* ── NAVBAR — single row, smaller ── */
+    .navbar {
+        padding: 0.3rem 0.6rem;
+        gap: 0.2rem;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .nav-logo { gap: 0.3rem; flex-shrink: 0; }
+    .logo-img  { width: 1.6rem; height: 1.6rem; }
+    .logo-text { font-size: 0.7rem; }
+    .nav-links { gap: 0.2rem; flex-wrap: nowrap; }
+    .nav-links a {
+        font-size: 0.55rem;
+        padding: 0.15rem 0.25rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* ── HERO — contain the yellow ── */
     .hero {
-        width: 100%;
         overflow: hidden;
         min-height: unset;
         height: auto;
-        padding: 1.5rem 1rem 2rem;
+        padding: 1.2rem 1rem 1.5rem;
         box-sizing: border-box;
+        width: 100%;
     }
-    .hero-media { display: none; }
+    .hero-media  { display: none; }
     .hero-shapes { display: none; }
-    .hero-content {
-        max-width: 100%;
-        position: relative;
-        z-index: 5;
-    }
-    .title { font-size: clamp(1.8rem, 8vw, 2.8rem); }
-    .hero-eyebrow { font-size: 0.6rem; }
-    .subtitle { font-size: 0.8rem; }
-    .hero-buttons { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
-    .btn { font-size: 0.75rem; padding: 0.5rem 1rem; }
+    .hero-content { max-width: 100%; position: relative; z-index: 5; }
+    .title         { font-size: clamp(1.6rem, 7vw, 2.5rem); line-height: 1.1; }
+    .hero-eyebrow  { font-size: 0.55rem; }
+    .subtitle      { font-size: 0.75rem; }
+    .hero-buttons  { flex-direction: column; gap: 0.4rem; align-items: flex-start; }
+    .btn           { font-size: 0.7rem; padding: 0.45rem 0.9rem; }
 
-    /* ── NAVBAR ── */
-    .navbar { padding: 0.4rem 0.8rem; flex-wrap: wrap; }
-    .nav-links { gap: 0.4rem; flex-wrap: wrap; }
-    .nav-links a { font-size: 0.65rem; padding: 0.15rem 0.3rem; }
-    .logo-text { font-size: 0.85rem; }
-    .logo-img { width: 1.8rem; height: 1.8rem; }
-
-    /* ── HALL OF FAME / LAYOUT BOTTOM ── */
-    .recent-mods { padding: 1rem; }
-    .recent-mods h2 { font-size: 1rem; margin-bottom: 0.8rem; }
+    /* ── HALL OF FAME ── */
+    .recent-mods { padding: 0.8rem; }
+    .recent-mods h2 { font-size: 0.95rem; margin-bottom: 0.6rem; }
     .layout-bottom {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
+        gap: 0.4rem;
     }
     .layout-bottom .card { animation: none; }
 
-    /* ── FIX EMPTY SPACE — index body fills screen ── */
-    body { min-height: 100vh; display: flex; flex-direction: column; }
-    .recent-mods { flex: 1 0 auto; }
-    .site-footer { flex-shrink: 0; position: relative !important; bottom: auto !important; }
+    /* ── FIX EMPTY SPACE BELOW CARDS ── */
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+    .recent-mods { flex: 0 0 auto; }
+    .site-footer { margin-top: auto; position: relative !important; }
 
     /* ── MODS GRID ── */
     .mods-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 0.5rem;
+        gap: 0.4rem;
     }
     .mods-grid .card-featured {
         grid-column: span 2;
         grid-row: span 1;
     }
-    .mods-grid .card-featured .image-placeholder {
-        aspect-ratio: 16/7;
-    }
+    .mods-grid .card-featured .image-placeholder { aspect-ratio: 16/7; }
 
     /* ── CARDS ── */
-    .card-info h4 { font-size: 0.65rem; }
-    .card-info h3 { font-size: 0.75rem; }
-    .card-info p  { font-size: 0.6rem; }
-    .diff-badge   { font-size: 0.5rem; padding: 0.1rem 0.3rem; }
+    .card-info { padding: 0.3rem 0.4rem; }
+    .card-info h4 { font-size: 0.6rem; line-height: 1.2; }
+    .card-info h3 { font-size: 0.65rem; }
+    .card-info p  { font-size: 0.55rem; }
+    .diff-badge   { font-size: 0.48rem; padding: 0.08rem 0.25rem; }
     .image-placeholder { aspect-ratio: 16/9; }
 
     /* ── CONTAINER ── */
-    .container { padding: 0.8rem; padding-bottom: 4rem; }
-    .page-header h1 { font-size: 1.3rem; }
+    .container { padding: 0.7rem; }
+    .page-header h1 { font-size: 1.2rem; }
+    .page-header .subtitle { font-size: 0.75rem; }
 
-    /* ── MOD PAGE ── */
-    .mod-layout { flex-direction: column; }
+    /* ── MOD PAGE — stack layout ── */
+    .mod-layout {
+        flex-direction: column !important;
+        gap: 1rem;
+    }
+    .mod-main  { width: 100%; }
     .mod-sidebar { width: 100%; }
-    .mod-banner { height: 45vw; min-height: 140px; }
-    .mod-banner-title h1 { font-size: 1.1rem; }
-    .mod-video-wrap iframe { height: 52vw; }
-    .song-table { font-size: 0.65rem; }
+    .mod-banner { height: 48vw; min-height: 130px; }
+    .mod-banner-title h1 { font-size: 1rem; }
+    .mod-banner-meta { font-size: 0.55rem; gap: 0.3rem; flex-wrap: wrap; }
+    .mod-video-wrap iframe { height: 55vw; min-height: 180px; }
+    .song-table { font-size: 0.62rem; }
+    .back-link { font-size: 0.65rem; }
 
     /* ── INSTALL ── */
-    .step { padding: 0.9rem; }
+    .install-guide { gap: 0.8rem; }
+    .step { padding: 0.8rem; }
     .step h3 { font-size: 0.85rem; }
-    .step p   { font-size: 0.78rem; }
-    .code-block { font-size: 0.6rem; word-break: break-all; padding: 0.5rem; }
+    .step p  { font-size: 0.75rem; }
+    .code-block { font-size: 0.58rem; word-break: break-all; padding: 0.4rem; }
+    .engine-btn { font-size: 0.65rem; padding: 0.4rem 0.8rem; }
 
-    /* ── POPUP — bottom center on mobile ── */
+    /* ── POPUP — bottom center ── */
     .commissions-popup {
-        width: 90vw;
-        left: 5vw !important;
+        position: fixed !important;
+        width: 88vw !important;
+        left: 6vw !important;
         right: auto !important;
         top: auto !important;
         bottom: 1rem !important;
         transform: none !important;
-        animation: slideUpMobile 0.5s ease forwards;
-        font-size: 0.82rem;
+        animation: slideUpMobile 0.5s ease forwards !important;
+        font-size: 0.8rem;
     }
     @keyframes slideUpMobile {
-        from { transform: translateY(120%); opacity: 0; }
-        to   { transform: translateY(0);    opacity: 1; }
+        from { opacity: 0; transform: translateY(80px); }
+        to   { opacity: 1; transform: translateY(0); }
     }
 
     /* ── FOOTER ── */
-    .site-footer {
-        padding: 0.7rem 1rem;
-        font-size: 0.65rem;
-    }
-    .footer-links { gap: 1rem; }
+    .site-footer { padding: 0.6rem 1rem; font-size: 0.62rem; }
+    .footer-links { gap: 0.8rem; }
 
-    /* ── SCROLLABLE PAGES — fix footer stuck mid page ── */
+    /* ── SCROLLABLE pages fix ── */
     body.scrollable {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
     }
     body.scrollable .container { flex: 1 0 auto; }
+    body.scrollable .site-footer { flex-shrink: 0; }
 }
