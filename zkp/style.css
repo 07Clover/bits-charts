@@ -105,7 +105,7 @@ body::after {
 .hero-buttons { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: flex-start; position: relative; z-index: 3; }
 .btn {
     font-family: 'Letterstuff', sans-serif; display: inline-flex; align-items: center;
-    padding: 1rem 0.9rem; font-size: 1rem; text-transform: uppercase;
+    padding: 8rem 0.9rem; font-size: 1rem; text-transform: uppercase;
     letter-spacing: 2px; text-decoration: none; border: 1px solid var(--border);
     cursor: pointer; transition: transform 0.1s, box-shadow 0.1s, background 0.1s; user-select: none;
 }
