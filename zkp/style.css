@@ -188,7 +188,7 @@ body::after {
 .commissions-popup {
     position: fixed !important; bottom: 4rem !important; right: 1.5rem !important;
     top: auto !important; left: auto !important; transform: translateY(30px);
-    background-color: rgba(26, 26, 34, 0.5);
+    background-color: rgba(26, 26, 34, 0.8);
     border: 3px solid var(--border); padding: 1.2rem 1.5rem; width: 17rem;
     box-shadow: 6px 6px 0 var(--border); z-index: 1001;
     opacity: 0; animation: slideInUp 0.5s ease-out forwards;
