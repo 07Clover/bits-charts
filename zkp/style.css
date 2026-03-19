@@ -166,8 +166,8 @@ body::after {
 /* ── FOOTER ── */
 .site-footer {
     height: var(--footer-h); background-color: var(--surface); color: var(--white);
-    padding: 0 9rem; display: flex; flex-direction: column; align-items: center;
-    justify-content: center; border-top: 3px solid var(--border); position: relative;
+    padding: 0 2rem; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; border-top: 9px solid var(--border); position: relative;
 }
 .site-footer::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
@@ -477,7 +477,7 @@ body.scrollable .container { padding-bottom: 5rem; }
     }
     .logo-img  { width: 2.4rem !important; height: 2.4rem !important; }
     .logo-text { display: none !important; }
-    .nav-links { gap: 0 !important; flex-wrap: nowrap !important; flex: 1; }
+    .nav-links { gap: 0.3rem !important; flex-wrap: nowrap !important; flex: 1; justify-content: flex-end !important; }
     .nav-links li { flex: 0 0 auto; text-align: center; }
     .nav-links li a {
         font-size: 0.8rem !important;
