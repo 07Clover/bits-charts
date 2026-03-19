@@ -449,10 +449,6 @@ body.scrollable .container { padding-bottom: 5rem; }
 .cdot.active { background: var(--primary); transform: scale(1.3); }
 .cdot:hover { background: var(--secondary); }
 
-
-
-
-
 /* ══════════════════════════════════════
    MOBILE RESPONSIVE
 ══════════════════════════════════════ */
@@ -460,31 +456,29 @@ body.scrollable .container { padding-bottom: 5rem; }
 @media (max-width: 768px) {
 
     html { overflow-x: hidden; }
-    body { overflow-x: hidden; width: 100%; max-width: 100vw; }
+    body { overflow-x: hidden; width: 100%; }
 
-    /* ── CRITICAL: force dark bg after hero ── */
-    .recent-mods,
-    .site-footer,
-    .view-all-container {
-        background: var(--bg) !important;
-        position: relative;
-        z-index: 2;
+    /* ── OVERRIDE BROKEN CALC VARIABLES ── */
+    :root {
+        --navbar-h: 3.2rem;
+        --footer-h: 0px;
+        --mods-h: 0px;
+        --banner-h: auto;
+        --bg: #0a0a0f;
     }
 
     /* ── NAVBAR ── */
     .navbar {
         height: auto !important;
+        min-height: var(--navbar-h);
         padding: 0.6rem 1rem !important;
         flex-wrap: nowrap !important;
         justify-content: space-between;
-        gap: 0.5rem;
-        position: relative;
-        z-index: 100;
     }
-    .nav-logo { gap: 0; flex-shrink: 0; }
+    .nav-logo { flex-shrink: 0; }
     .logo-img  { width: 2.4rem !important; height: 2.4rem !important; }
     .logo-text { display: none !important; }
-    .nav-links { gap: 0 !important; flex-wrap: nowrap !important; flex: 1; justify-content: flex-end; }
+    .nav-links { gap: 0 !important; flex-wrap: nowrap !important; flex: 1; }
     .nav-links li { flex: 1; text-align: center; }
     .nav-links li a {
         font-size: 0.8rem !important;
@@ -496,46 +490,57 @@ body.scrollable .container { padding-bottom: 5rem; }
     }
     .nav-links li a::before { display: none; }
 
-    /* ── HERO ── */
+    /* ── HERO — full proper height ── */
     .hero {
-        overflow: hidden !important;
-        min-height: unset !important;
         height: auto !important;
+        min-height: 55vw !important;
+        background-color: #fecb52 !important;
+        overflow: hidden !important;
         padding: 1.5rem 1.2rem 2rem !important;
         box-sizing: border-box !important;
-        max-width: 100vw !important;
-        position: relative;
-        z-index: 1;
+        display: flex !important;
+        align-items: center !important;
     }
     .hero-media  { display: none !important; }
     .hero-shapes { display: none !important; }
-    .hero-content { max-width: 100% !important; }
-    .title        { font-size: clamp(2rem, 8vw, 3rem) !important; line-height: 1.1; }
-    .hero-eyebrow { font-size: 0.75rem !important; }
-    .subtitle     { font-size: 1rem !important; }
-    .hero-buttons { flex-direction: column !important; gap: 0.5rem; align-items: flex-start; }
+    .hero-content {
+        max-width: 100% !important;
+        width: 100% !important;
+        position: relative;
+        z-index: 5;
+    }
+    .title        { font-size: clamp(2.2rem, 9vw, 3.5rem) !important; line-height: 1.1; }
+    .hero-eyebrow { font-size: 0.78rem !important; display: block !important; }
+    .subtitle     { font-size: 1rem !important; display: block !important; }
+    .hero-buttons { flex-direction: column !important; gap: 0.5rem; align-items: flex-start; margin-top: 1rem; }
     .btn          { font-size: 0.9rem !important; padding: 0.6rem 1.2rem !important; }
 
-    /* ── HALL OF FAME ── */
-    .recent-mods { padding: 1rem; }
-    .recent-mods h2 { font-size: 1.1rem; margin-bottom: 0.8rem; }
+    /* ── RECENT MODS / HALL OF FAME ── */
+    .recent-mods {
+        padding: 1.2rem 1rem !important;
+        background: #0a0a0f !important;
+    }
+    .recent-mods h2 { font-size: 1.2rem; margin-bottom: 0.9rem; }
     .layout-bottom {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 0.6rem;
+        gap: 0.7rem !important;
         height: auto !important;
         max-height: none !important;
+        overflow: visible !important;
     }
     .layout-bottom .card { animation: none !important; }
+    .view-all-container { background: #0a0a0f !important; padding: 0.5rem 1rem 1rem; }
 
     /* ── FOOTER ── */
     .site-footer {
+        background: var(--surface) !important;
         position: relative !important;
         bottom: auto !important;
-        padding: 0.8rem 1rem;
-        font-size: 0.75rem;
+        padding: 0.9rem 1rem;
+        font-size: 0.78rem;
     }
-    .footer-links { gap: 1rem; }
+    .footer-links { gap: 1.2rem; }
 
     /* ── SCROLLABLE pages ── */
     body.scrollable { display: flex; flex-direction: column; min-height: 100vh; }
@@ -571,7 +576,6 @@ body.scrollable .container { padding-bottom: 5rem; }
     .mod-video-wrap { width: 100%; position: relative; padding-top: 56.25%; height: 0; overflow: hidden; margin-bottom: 0.5rem; }
     .mod-video-wrap iframe { position: absolute !important; top: 0; left: 0; width: 100% !important; height: 100% !important; }
     .mod-section p { font-size: 0.92rem !important; line-height: 1.7; }
-    .mod-section-label { font-size: 0.75rem !important; }
     .song-table { font-size: 0.78rem; width: 100%; }
     .back-link { font-size: 0.82rem; margin-bottom: 0.8rem; display: block; }
     .sidebar-box-label { font-size: 0.78rem; }
