@@ -25,28 +25,69 @@
         </div>
 
         <div class="install-guide">
+
+            <div style="display:flex;gap:0.4rem;margin-bottom:1rem;">
+                <button id="btn-pc" onclick="setMode('pc')" style="font-size:1.6rem;padding:0.3rem 0.6rem;background:var(--surface2);border:2px solid var(--secondary);cursor:pointer;box-shadow:2px 2px 0 #000;">🖥️</button>
+                <button id="btn-mob" onclick="setMode('mob')" style="font-size:1.6rem;padding:0.3rem 0.6rem;background:var(--surface2);border:2px solid var(--border);cursor:pointer;box-shadow:2px 2px 0 #000;">📱</button>
+            </div>
+
             <div class="step" data-step="1">
                 <h3>Download the Engine</h3>
-                <p>All my charts and mods are built for <strong style="color:var(--secondary)">P-Slice Engine (Psych Engine)</strong>. It is the most stable and standard engine right now.</p>
-                <a href="https://gamebanana.com/mods/535203" target="_blank" class="engine-btn">> Download P-Slice Engine</a>
+                <div class="pc-content">
+                    <p>All my charts and mods are built for <strong style="color:var(--secondary)">P-Slice Engine (Psych Engine)</strong>. It is the most stable and standard engine right now.</p>
+                    <a href="https://gamebanana.com/mods/535203" target="_blank" class="engine-btn">> Download P-Slice Engine</a>
+                </div>
+                <div class="mob-content" style="display:none;">
+                    <p>📱 Download the <strong style="color:var(--secondary)">P-Slice Engine APK</strong> and install it. Then <strong style="color:var(--score-green)">open the app once</strong> and grant it permission to manage files — this creates the mods folder automatically.</p>
+                    <a href="https://gamebanana.com/mods/535203" target="_blank" class="engine-btn">> Download P-Slice APK</a>
+                </div>
             </div>
 
             <div class="step" data-step="2">
                 <h3>Download the Mod</h3>
-                <p>Go to the <a href="mods.html"><strong>Mods</strong></a> section, pick the one you like and download it. It will come as a <strong style="color:var(--primary)">.zip</strong> or <strong style="color:var(--primary)">.rar</strong> file.</p>
+                <div class="pc-content">
+                    <p>Go to the <a href="mods.html"><strong>Mods</strong></a> section, pick the one you like and download it. It will come as a <strong style="color:var(--primary)">.zip</strong> or <strong style="color:var(--primary)">.rar</strong> file.</p>
+                </div>
+                <div class="mob-content" style="display:none;">
+                    <p>📥 Go to the <a href="mods.html"><strong>Mods</strong></a> section and download the mod. It saves as a <strong style="color:var(--primary)">.zip</strong> or <strong style="color:var(--primary)">.rar</strong> in your <strong style="color:var(--secondary)">Downloads</strong> folder.</p>
+                </div>
             </div>
 
             <div class="step" data-step="3">
                 <h3>Extract to the 'mods' Folder</h3>
-                <p>Unzip the file you downloaded. You will get a folder with the mod name. Move that entire folder inside the <code style="color:var(--secondary)">mods/</code> directory of P-Slice Engine:</p>
-                <div class="code-block">C:\P_Slice_Engine\mods\Your_Mod_Here\</div>
+                <div class="pc-content">
+                    <p>Unzip the file you downloaded. Move that folder inside the <code style="color:var(--secondary)">mods/</code> directory of P-Slice Engine:</p>
+                    <div class="code-block">C:\P_Slice_Engine\mods\Your_Mod_Here\</div>
+                </div>
+                <div class="mob-content" style="display:none;">
+                    <p>📂 Open <strong style="color:var(--secondary)">ZArchiver</strong> and enable hidden folders first: <strong style="color:var(--primary)">☰ Menu → Settings → Show hidden files</strong>. Then find the downloaded file, extract it and move the folder to:</p>
+                    <div class="code-block">.P-SliceEngine/mods/</div>
+                    <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.5);">📁 This folder appears next to Music, Movies and Downloads once you open the app at least once.</p>
+                </div>
             </div>
 
             <div class="step" data-step="4">
                 <h3>Play!</h3>
-                <p>Open the game <strong style="color:var(--score-green)">.exe</strong>. Go to the <strong style="color:var(--secondary)">Freeplay</strong> menu and you will see the songs ready to go. Time to destroy your keyboard!</p>
+                <div class="pc-content">
+                    <p>Open the game <strong style="color:var(--score-green)">.exe</strong>. Go to <strong style="color:var(--secondary)">Freeplay</strong> and you will see the songs. Time to destroy your keyboard! ⌨️</p>
+                </div>
+                <div class="mob-content" style="display:none;">
+                    <p>🎮 Open <strong style="color:var(--score-green)">P-Slice Engine</strong> and go to <strong style="color:var(--secondary)">Freeplay</strong> — the mod songs will be there. Time to destroy your screen! 📱💥</p>
+                </div>
             </div>
+
         </div>
+
+        <script>
+        function setMode(mode) {
+            document.querySelectorAll('.pc-content').forEach(function(el){ el.style.display = mode==='pc' ? '' : 'none'; });
+            document.querySelectorAll('.mob-content').forEach(function(el){ el.style.display = mode==='mob' ? '' : 'none'; });
+            var btnPc = document.getElementById('btn-pc');
+            var btnMob = document.getElementById('btn-mob');
+            btnPc.style.borderColor = mode==='pc' ? 'var(--secondary)' : 'var(--border)';
+            btnMob.style.borderColor = mode==='mob' ? 'var(--primary)' : 'var(--border)';
+        }
+        </script>
     </div>
 
     <div class="commissions-popup" id="commPopup">
