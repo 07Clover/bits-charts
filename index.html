@@ -43,6 +43,8 @@
             .hero-buttons { display: flex !important; flex-direction: column !important; gap: 0.5rem; align-items: flex-start; margin-top: 1rem; }
             .btn          { font-size: 0.9rem !important; padding: 0.6rem 1.2rem !important; }
             .layout-bottom .card { animation: none !important; }
+            .site-footer { display: none !important; }
+            .mobile-footer { display: block !important; }
         }
     </style>
 </head>
@@ -108,8 +110,15 @@
 
     </section>
 
+    <div class="mobile-footer" style="display:none; text-align:center; padding: 1.5rem 1rem; font-family: VCR, monospace; color: rgba(255,255,255,0.3); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">hellooooo :)</div>
 
-    <div style="text-align:center; padding: 1rem; font-family: VCR, monospace; color: rgba(255,255,255,0.3); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: -1rem;">hellooooo :)</div>
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="https://www.youtube.com/@mq-bit" class="footer-link" target="_blank">> YouTube</a>
+            <a href="https://x.com/0CloverSp" class="footer-link" target="_blank">> X (Twitter)</a>
+        </div>
+        <p>&copy; 2026 Bit's Charts. All rights reserved.</p>
+    </footer>
 
     <div class="commissions-popup" id="commPopup">
         <div class="popup-drag-handle" id="popupHandle">&#9733; COMMISSIONS &#9733;</div>
