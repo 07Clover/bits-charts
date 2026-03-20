@@ -17,6 +17,8 @@
         .recent-mods { flex: 1 0 auto; }
         .site-footer { flex-shrink: 0; position: relative !important; bottom: auto !important; }
         .layout-bottom .card { animation: cardFloat 3s ease-in-out infinite; }
+        /* Cards más pequeñas en PC */
+        #hall-of-fame { max-width: 70%; margin: 0 auto; }
         .layout-bottom .card:nth-child(1) { animation-delay: 0s;   }
         .layout-bottom .card:nth-child(2) { animation-delay: 0.2s; }
         .layout-bottom .card:nth-child(3) { animation-delay: 0.4s; }
@@ -76,7 +78,12 @@
 
     <section class="recent-mods">
         <h2>Hall of Fame</h2>
-        <div class="layout-bottom" id="hall-of-fame"></div>
+        <div id="hof-dots" style="display:flex;justify-content:center;gap:0.5rem;margin-bottom:0.8rem;margin-top:-2.5rem;"></div>
+        <div style="display:flex;align-items:center;gap:0.3rem;">
+            <button id="hof-prev" style="background:var(--surface2);border:2px solid var(--border);color:var(--secondary);font-family:'VCR',monospace;font-size:1.4rem;padding:0.5rem 0.7rem;cursor:pointer;flex-shrink:0;box-shadow:3px 3px 0 var(--border);">&lt;</button>
+            <div class="layout-bottom" id="hall-of-fame" style="flex:1;"></div>
+            <button id="hof-next" style="background:var(--surface2);border:2px solid var(--border);color:var(--secondary);font-family:'VCR',monospace;font-size:1.4rem;padding:0.5rem 0.7rem;cursor:pointer;flex-shrink:0;box-shadow:3px 3px 0 var(--border);">&gt;</button>
+        </div>
     </section>
 
     <div class="mobile-footer" style="display:none; text-align:center; padding: 1.5rem 1rem; font-family: VCR, monospace; color: rgba(255,255,255,0.3); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">hellooooo :)</div>
@@ -100,15 +107,41 @@
     <script src="zkp/mods-data.js"></script>
     <script>
         const DIFF_LABELS = { easy:"EASY", normal:"NORMAL", hard:"HARD", erect:"ERECT" };
-        const hof = MODS_DATA.filter(m => m.hallOfFame);
-        document.getElementById('hall-of-fame').innerHTML = hof.map(m => `
-            <div class="card card-small" onclick="location.href='zkp/mods/${m.id}.html'">
-                <div class="image-placeholder" style="background-image:url('zkp/${m.banner}');background-size:cover;background-position:center;"></div>
-                <div class="card-info">
-                    <h4>${m.name} ${m.diffs.map(d => `<span class="diff-badge diff-${d}">${DIFF_LABELS[d]}</span>`).join(' ')}</h4>
-                </div>
-            </div>
-        `).join('');
+        function shuffle(a){var b=a.slice();for(var i=b.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=b[i];b[i]=b[j];b[j]=t;}return b;}
+        var isMobile = window.innerWidth <= 768;
+        var perPage = 4, cols = isMobile ? 2 : 4;
+        var hof = shuffle(MODS_DATA.filter(m => m.hallOfFame));
+        var total = Math.ceil(hof.length / perPage), cur = 0;
+        var grid = document.getElementById('hall-of-fame');
+        var dotsEl = document.getElementById('hof-dots');
+        var btnPrev = document.getElementById('hof-prev');
+        var btnNext = document.getElementById('hof-next');
+        grid.style.gridTemplateColumns = 'repeat('+cols+', minmax(0, 1fr))';
+        for(var i=0;i<total;i++){
+            var dot=document.createElement('div');
+            dot.style.cssText='width:8px;height:8px;border:2px solid #000;background:var(--surface3);cursor:pointer;transition:background 0.15s;';
+            dot.dataset.page=i;
+            dot.addEventListener('click',function(){goTo(parseInt(this.dataset.page));});
+            dotsEl.appendChild(dot);
+        }
+        function goTo(page){
+            cur=page;
+            grid.style.transition='opacity 0.2s'; grid.style.opacity='0';
+            setTimeout(function(){
+                grid.innerHTML=hof.slice(page*perPage,(page+1)*perPage).map(m=>`
+                    <div class="card card-small" onclick="location.href='zkp/mods/${m.id}.html'">
+                        <div class="image-placeholder" style="background-image:url('zkp/${m.banner}');background-size:cover;background-position:center;"></div>
+                        <div class="card-info"><h4>${m.name} ${m.diffs.map(d=>`<span class="diff-badge diff-${d}">${DIFF_LABELS[d]}</span>`).join(' ')}</h4></div>
+                    </div>`).join('');
+                dotsEl.querySelectorAll('div').forEach(function(d,i){d.style.background=i===page?'var(--secondary)':'var(--surface3)';});
+                btnPrev.style.opacity=page===0?'0.35':'1';
+                btnNext.style.opacity=page===total-1?'0.35':'1';
+                grid.style.opacity='1';
+            },200);
+        }
+        btnPrev.addEventListener('click',function(){goTo(cur>0?cur-1:total-1);});
+        btnNext.addEventListener('click',function(){goTo(cur<total-1?cur+1:0);});
+        goTo(0);
     </script>
     <script>
     (function() {
