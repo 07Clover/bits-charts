@@ -91,7 +91,7 @@
             if (featured) {
                 return `
                 <div class="card card-featured" onclick="location.href='mods/${m.id}.html'">
-                    <div class="image-placeholder" style="background-image:url('${m.banner}');background-size:cover;background-position:center;"></div>
+                    <div class="image-placeholder lazy-bg" data-bg="${m.banner}"></div>
                     <div class="card-info">
                         <h3>${m.name}</h3>
                         <p>${m.diffs.map(d => badge(d)).join(' ')}</p>
@@ -100,7 +100,7 @@
             }
             return `
             <div class="card card-small" onclick="location.href='mods/${m.id}.html'">
-                <div class="image-placeholder" style="background-image:url('${m.banner}');background-size:cover;background-position:center;"></div>
+                <div class="image-placeholder lazy-bg" data-bg="${m.banner}"></div>
                 <div class="card-info"><h4 class="${obsoleteCls}">${m.name} </h4>${diffBadge}</div>
             </div>`;
         }
@@ -137,6 +137,24 @@
         document.addEventListener('mousemove', function(e) { if(drag){ popup.style.left=(e.clientX-ox)+'px'; popup.style.top=(e.clientY-oy)+'px'; } });
         document.addEventListener('mouseup', function() { drag = false; });
     })();
+    </script>
+    <script>
+    // Lazy loading para background-image
+    const lazyObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                var el = entry.target;
+                el.style.backgroundImage = "url('" + el.dataset.bg + "')";
+                el.style.backgroundSize = 'cover';
+                el.style.backgroundPosition = 'center';
+                el.classList.remove('lazy-bg');
+                lazyObserver.unobserve(el);
+            }
+        });
+    }, { rootMargin: '100px' });
+    document.querySelectorAll('.lazy-bg').forEach(function(el) {
+        lazyObserver.observe(el);
+    });
     </script>
 </body>
 </html>

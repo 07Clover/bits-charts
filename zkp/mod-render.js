@@ -15,7 +15,7 @@ function renderMod(modId) {
     document.title = `Bit's Charts | ${MOD.name}`;
 
     const banner = MOD.banner
-        ? `<img src="${MOD.banner}" alt="${MOD.name}">`
+        ? `<img src="${MOD.banner}" alt="${MOD.name}" loading="lazy">`
         : `<div class="mod-banner-placeholder">[ ADD BANNER ]</div>`;
 
     const diffBadges = (MOD.diffs || []).map(badge).join(' ');
