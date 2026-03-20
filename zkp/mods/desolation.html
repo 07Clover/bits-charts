@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body class="scrollable">
-
 <nav class="navbar">
     <div class="nav-logo">
         <a href="../../index.html"><img src="../img/logo.png" alt="Logo" class="logo-img"></a>
@@ -17,181 +16,46 @@
     <ul class="nav-links">
         <li><a href="../mods.html" class="active">Mods</a></li>
         <li><a href="../install.html">Install</a></li>
-        
         <li><a href="../credits.html">Credits</a></li>
     </ul>
 </nav>
-
 <div id="mod-root"></div>
-
-    <div class="commissions-popup" id="commPopup">
-        <div class="popup-drag-handle" id="popupHandle">&#9733; COMMISSIONS &#9733;</div>
-        <button class="popup-close" onclick="document.getElementById('commPopup').style.display='none'" title="Close">&#x2715;</button>
-        <h4>Commissions Open!</h4>
-        <p>I make charts and code for Friday Night Funkin'. Need help with your mod?</p>
-        <a href="https://linktr.ee/qm_Bit" class="commission-btn" target="_blank">> Hit me up on Discord!</a>
-    </div>
-
+<div class="commissions-popup" id="commPopup">
+    <div class="popup-drag-handle" id="popupHandle">&#9733; COMMISSIONS &#9733;</div>
+    <button class="popup-close" onclick="document.getElementById('commPopup').style.display='none'" title="Close">&#x2715;</button>
+    <h4>Commissions Open!</h4>
+    <p>I make charts and code for Friday Night Funkin'. Need help with your mod?</p>
+    <a href="https://linktr.ee/qm_Bit" class="commission-btn" target="_blank">&gt;&gt; Hit me up on Discord!</a>
+</div>
 <footer class="site-footer">
     <div class="footer-links">
-        <a href="https://www.youtube.com/@mq-bit" class="footer-link" target="_blank">> YouTube</a>
-        <a href="https://x.com/0CloverSp" class="footer-link" target="_blank">> X (Twitter)</a>
+        <a href="https://www.youtube.com/@mq-bit" class="footer-link" target="_blank">&gt; YouTube</a>
+        <a href="https://x.com/0CloverSp" class="footer-link" target="_blank">&gt; X (Twitter)</a>
     </div>
     <p>&copy; 2026 Bit's Charts. All rights reserved.</p>
 </footer>
-
+<script src="../mods-data.js"></script>
+<script src="../mod-render.js"></script>
+<script>renderMod("desolation");</script>
 <script>
-const MOD = {
-    name:        "Desolation",
-    author:      "Bit",
-    engine:      "P-Slice (Psych)",
-    released:    "2026",
-    version:     "v1.0",
-    banner:      "../img/mods/desolation.png",
-    diffs:       ["normal"],
-    description: `A chart for Desolation.<br><br>Made with P-Slice Engine.`,
-    videos: [
-        { id: "vBRXEtGbngs", label: "Gameplay Preview" },
-    ],
-    songs: [
-        { num: "01", name: "Desolation", diffs: ["normal"], bpm: 182 },
-    ],
-    downloads: [
-        { label: ">> Google Drive", href: "https://drive.google.com/file/d/1Sm3bJbWh-r1UE-lkUjRk079qV86noZKL/view?usp=drive_link", style: "green" },
-    ],
-    links: [],
-    credits: [
-        { role: "Charter",  icon: "📝", people: [{ name: "Bit", detail: "Normal" }] },
-        { role: "Coder",    icon: "⚙️", people: [{ name: "Bit" }] },
-        { role: "Song",     icon: "🎵", people: [{ name: "Ezzy" }] },   
-        { role: "Concept",    icon: "🖼️", people: [{ name: "innercomer" }] },
-        { role: "Stage", icon: "🖼️", people: [{ name: "SebastianPR" }] },
-    ],
-};
-
-const DIFF_LABELS  = { easy:"EASY", normal:"NORMAL", hard:"HARD", erect:"ERECT" };
-const DIFF_CLASSES = { easy:"diff-easy", normal:"diff-normal", hard:"diff-hard", erect:"diff-erect" };
-
-function badge(d) {
-    return `<span class="diff-badge ${DIFF_CLASSES[d]}">${DIFF_LABELS[d]}</span>`;
-}
-
-function render() {
-    try {
-        document.title = `Bit's Charts | ${MOD.name}`;
-
-        const banner = MOD.banner 
-            ? `<img src="${MOD.banner}" alt="${MOD.name}">` 
-            : `<div class="mod-banner-placeholder">[ ADD BANNER ]</div>`;
-
-        const diffBadges = (MOD.diffs || []).map(badge).join(' ');
-
-        const videos = (MOD.videos || []).map(v => `
-            <div class="mod-video-wrap">
-                <iframe src="https://www.youtube.com/embed/${v.id}" title="${v.label}" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <div class="video-label">&gt; ${v.label}</div>
-            </div>
-        `).join('');
-
-        const songRows = (MOD.songs || []).map(s => `
-            <tr>
-                <td style="color:var(--text-body);opacity:0.5;">${s.num}</td>
-                <td>${s.name}</td>
-                <td>${(s.diffs || []).map(badge).join(' ')}</td>
-                <td><span class="bpm-val">${s.bpm}</span></td>
-            </tr>
-        `).join('');
-
-        const songSection = songRows ? `
-            <div class="mod-section">
-                <span class="mod-section-label cyan">Song List</span>
-                <table class="song-table">
-                    <thead><tr><th>#</th><th>Song Name</th><th>Difficulty</th><th>BPM</th></tr></thead>
-                    <tbody>${songRows}</tbody>
-                </table>
-            </div>` : '';
-
-        const creditsRows = (MOD.credits || []).map(c => {
-            const people = (c.people || []).map(p => `
-                <div class="credit-person">
-                    <span class="credit-name">${p.name}</span>
-                    ${p.detail ? `<span class="credit-detail">— ${p.detail}</span>` : ''}
-                </div>
-            `).join('');
-            return `
-                <div class="credit-row">
-                    <div class="credit-role-label"><span>${c.icon}</span><span>${c.role}</span></div>
-                    <div class="credit-people">${people}</div>
-                </div>`;
-        }).join('');
-
-        const creditsSection = creditsRows ? `
-            <div class="mod-section">
-                <span class="mod-section-label green">Credits</span>
-                <div class="credits-list">${creditsRows}</div>
-            </div>` : '';
-
-        const dlButtons = (MOD.downloads || []).filter(d => d.href).map(d => `
-            <a href="${d.href}" class="download-btn ${d.style === 'secondary' ? 'secondary' : ''}" target="_blank">${d.label}</a>
-        `).join('');
-
-        document.getElementById('mod-root').innerHTML = `
-            <div class="mod-banner">${banner}<div class="mod-banner-overlay"></div>
-                <div class="mod-banner-title">
-                    <h1>${MOD.name}</h1>
-                    <div class="mod-banner-meta">
-                        <span>By ${MOD.author}</span>
-                        <span>${MOD.engine}</span>
-                        <span>${MOD.released}</span>
-                        ${diffBadges}
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <a href="../mods.html" class="back-link">&lt;&lt; Back to All Mods</a>
-                <div class="mod-layout">
-                    <div class="mod-main">
-                        ${videos}
-                        <div class="mod-section"><span class="mod-section-label">Description</span><p>${MOD.description}</p></div>
-                        ${songSection}
-                        ${creditsSection}
-                    </div>
-                    <div class="mod-sidebar">
-                        <div class="sidebar-box">
-                            <div class="sidebar-box-label">&gt; Download</div>
-                            <div class="sidebar-box-body">${dlButtons}</div>
-                        </div>
-                        <div class="sidebar-box">
-                            <div class="sidebar-box-label">&gt; Mod Info</div>
-                            <div class="sidebar-box-body">
-                                <p><strong>Charter</strong><br>${MOD.author}</p>
-                                <p><strong>Engine</strong><br>${MOD.engine}</p>
-                                <p><strong>Songs</strong><br>${(MOD.songs || []).length}</p>
-                                <p><strong>Released</strong><br>${MOD.released}</p>
-                                <p><strong>Version</strong><br>${MOD.version}</p>
-                            </div>
-                        </div>
-                        <div class="sidebar-box" style="border-color:var(--primary);">
-                            <div class="sidebar-box-label" style="background:var(--primary);color:var(--white);">&gt; HEEEYY BRO</div>
-                            <div class="sidebar-box-body" style="text-align:center;">
-                                <p style="font-family:'SSS',monospace;color:var(--white);font-size:0.85rem;margin-bottom:0.8rem;line-height:1.6;">ples donate 🙏</p>
-                                <a href="https://www.paypal.com/paypalme/JoseCaceres170dp" class="download-btn" target="_blank" style="background:var(--score-green);color:var(--black);">&gt;&gt; PayPal Donate</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>`;
-        
-        console.log("✅ Renderizado OK:", MOD.name);
-        
-    } catch(e) {
-        console.error("❌ Error:", e);
-        document.getElementById('mod-root').innerHTML = `<h1 style="color:red;text-align:center;padding:100px;">Error al cargar el mod<br><small>${e.message}</small></h1>`;
-    }
-}
-
-render();
+(function() {
+    var popup = document.getElementById('commPopup');
+    var handle = document.getElementById('popupHandle');
+    if (!popup || !handle) return;
+    var drag = false, ox = 0, oy = 0;
+    handle.addEventListener('mousedown', function(e) {
+        var r = popup.getBoundingClientRect();
+        popup.style.transform = 'none';
+        popup.style.top = r.top + 'px'; popup.style.left = r.left + 'px';
+        popup.style.right = 'auto'; popup.style.bottom = 'auto';
+        drag = true; ox = e.clientX - r.left; oy = e.clientY - r.top;
+        e.preventDefault();
+    });
+    document.addEventListener('mousemove', function(e) {
+        if (drag) { popup.style.left=(e.clientX-ox)+'px'; popup.style.top=(e.clientY-oy)+'px'; }
+    });
+    document.addEventListener('mouseup', function() { drag = false; });
+})();
 </script>
 </body>
 </html>
