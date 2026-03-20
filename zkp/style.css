@@ -462,7 +462,7 @@ body.scrollable .container { padding-bottom: 5rem; }
     /* ── RESET BROKEN CALC ── */
     :root {
         --navbar-h: 3.2rem;
-        --footer-h: auto;
+        --footer-h: 0px;
         --mods-h: 0px;
         --banner-h: auto;
         --bg: #0a0a0f;
