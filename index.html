@@ -16,6 +16,10 @@
         body { display: flex; flex-direction: column; min-height: 100vh; }
         .recent-mods { flex: 1 0 auto; }
         .site-footer { flex-shrink: 0; position: relative !important; bottom: auto !important; }
+        /* Most Viewed — 4 columnas en PC para que entren los 8 mods en 2 filas */
+        .layout-bottom {
+            grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        }
         .layout-bottom .card { animation: cardFloat 3s ease-in-out infinite; }
         .layout-bottom .card:nth-child(1) { animation-delay: 0s;   }
         .layout-bottom .card:nth-child(2) { animation-delay: 0.2s; }
@@ -34,21 +38,6 @@
             .layout-bottom .card { animation: none !important; }
             .site-footer  { display: none !important; }
             .mobile-footer { display: block !important; }
-            /* Most Viewed scroll horizontal en móvil */
-            .layout-bottom {
-                display: flex !important;
-                flex-wrap: nowrap !important;
-                overflow-x: auto !important;
-                gap: 0.7rem !important;
-                padding-bottom: 0.5rem !important;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-            }
-            .layout-bottom::-webkit-scrollbar { display: none; }
-            .layout-bottom .card {
-                flex: 0 0 70vw !important;
-                max-width: 70vw !important;
-            }
         }
     </style>
 </head>
