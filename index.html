@@ -31,12 +31,12 @@
             .hero {
                 height: auto !important;
                 min-height: unset !important;
-                padding: 4rem 1.2rem 2.5rem !important;
+                padding: 2rem 1.2rem 2.5rem !important;
                 overflow: hidden !important;
                 box-sizing: border-box !important;
             }
-            .hero-media, .hero-shapes { display: none !important; }
-            .hero-content { position: static !important; max-width: 100% !important; }
+            .hero-media, .hero-shapes, .hero-gif { display: none !important; }
+            .hero-content { position: relative !important; max-width: 100% !important; z-index: 10 !important; }
             .hero-eyebrow { display: block !important; font-size: 0.75rem !important; }
             .title        { display: block !important; font-size: clamp(2.2rem, 9vw, 3.5rem) !important; line-height: 1.1 !important; }
             .subtitle     { display: block !important; font-size: 0.95rem !important; }
@@ -74,7 +74,7 @@
         <div class="hero-media">
             <img src="zkp/img/bf-fnf-boyfriend.gif" alt="Boyfriend FNF" class="hero-gif">
         </div>
-        <div class="hero-content">
+        <div class="hero-content" style="position:relative;z-index:10;">
             <span class="hero-eyebrow">Friday Night Funkin' Charts</span>
             <h1 class="title">Bit's <span>Charts</span></h1>
             <p class="subtitle">The best FNF charts made for you!</p>
@@ -105,9 +105,7 @@
                 <div class="card-info"><h4>Corruption Minipack <span class="diff-badge diff-erect">ERECT</span></h4></div>
             </div>
         </div>
-        <div class="view-all-container">
-            <a href="zkp/mods.html" class="view-all-link">>> View All Mods</a>
-        </div>
+
     </section>
 
     <footer class="site-footer">
