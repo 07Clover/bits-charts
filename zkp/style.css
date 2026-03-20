@@ -559,6 +559,8 @@ body.scrollable .container { padding-bottom: 5rem; }
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+        overflow: auto !important;
+        height: auto !important;
     }
     body.scrollable .container { flex: 1 0 auto; }
     body.scrollable .site-footer { flex-shrink: 0; }
