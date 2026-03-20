@@ -111,6 +111,7 @@ const MODS_DATA = [
     },
     {
         id: "deux-sex-machina",
+        hallOfFame: true,
         name: "Deux Sex Machina",
         author: "Bit",
         engine: "P-Slice (Psych)",
@@ -329,6 +330,7 @@ const MODS_DATA = [
     },
     {
         id: "tutorial-pico-mix",
+        hallOfFame: true,
         name: "Tutorial (Pico Mix)",
         author: "Bit",
         engine: "P-Slice (Psych)",
@@ -352,6 +354,7 @@ const MODS_DATA = [
     },
     {
         id: "otis",
+        hallOfFame: true,
         name: "Otis",
         author: "Bit",
         engine: "P-Slice (Psych)",
@@ -419,6 +422,7 @@ const MODS_DATA = [
     },
     {
         id: "snowed-in",
+        hallOfFame: true,
         name: "Snowed In",
         author: "Bit",
         engine: "P-Slice (Psych)",
