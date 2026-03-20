@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="zkp/page-transition.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bit's Charts | Home</title>
@@ -15,55 +14,28 @@
     <meta name="twitter:card" content="summary_large_image">
     <style>
         body { display: flex; flex-direction: column; min-height: 100vh; }
-        .recent-mods { flex: 1 0 auto; height: auto !important; overflow: visible !important; padding-bottom: 1.5rem !important; }
+        .recent-mods { flex: 1 0 auto; }
         .site-footer { flex-shrink: 0; position: relative !important; bottom: auto !important; }
-
-        /* Carrusel */
-        .carousel-wrap { display: flex; align-items: center; gap: 0.5rem; }
-        .carousel-btn {
-            background: var(--surface2); border: 2px solid var(--border); color: var(--secondary);
-            font-family: 'VCR', monospace; font-size: 1.4rem; padding: 0.5rem 0.9rem;
-            cursor: pointer; flex-shrink: 0; box-shadow: 3px 3px 0 var(--border);
-            transition: background 0.15s, transform 0.1s; user-select: none; line-height: 1;
-        }
-        .carousel-btn:hover { background: var(--surface3); transform: translate(-1px,-1px); box-shadow: 4px 4px 0 var(--border); }
-        .carousel-btn:disabled { opacity: 0.25; cursor: default; transform: none; box-shadow: 2px 2px 0 var(--border); }
-        .carousel-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 0.4rem;
-            flex: 1;
-        }
-        .carousel-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 0.7rem; }
-        .carousel-dot {
-            width: 8px; height: 8px; border: 2px solid var(--border);
-            background: var(--surface3); cursor: pointer; transition: background 0.15s;
-        }
-        .carousel-dot.active { background: var(--secondary); }
-
-        /* Cards pequeñas manteniendo 16/9 */
-        .carousel-grid .card .image-placeholder { aspect-ratio: 16/9 !important; }
-        .carousel-wrap { max-width: 80%; margin: 0 auto; }
-
-        /* Float animation desactivado para no cortar cards */
-        .carousel-grid .card { animation: none !important; }
-
-        /* Fade al cambiar */
-        .carousel-grid { transition: opacity 0.2s ease; }
-        .carousel-grid.fading { opacity: 0; }
-
+        .layout-bottom .card { animation: cardFloat 3s ease-in-out infinite; }
+        .layout-bottom .card:nth-child(1) { animation-delay: 0s;   }
+        .layout-bottom .card:nth-child(2) { animation-delay: 0.2s; }
+        .layout-bottom .card:nth-child(3) { animation-delay: 0.4s; }
+        .layout-bottom .card:nth-child(4) { animation-delay: 0.6s; }
+        @keyframes cardFloat { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-5px); } }
         @media (max-width: 768px) {
-            .hero { height: auto !important; min-height: unset !important; padding: 2rem 1.2rem 2.5rem !important; overflow: hidden !important; box-sizing: border-box !important; }
+            body { overflow: auto !important; height: auto !important; display: block !important; }
+            .hero { height: auto !important; min-height: unset !important; padding: 1.2rem 1.2rem 1.5rem !important; overflow: hidden !important; box-sizing: border-box !important; }
             .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,87,184,0.15) 0%, transparent 50%, rgba(74,241,242,0.1) 100%); pointer-events: none; z-index: 1; }
             .hero-media, .hero-shapes, .hero-gif { display: none !important; }
             .hero-content { position: relative !important; max-width: 100% !important; z-index: 10 !important; }
-            .hero-eyebrow { display: block !important; font-size: 0.75rem !important; }
-            .title        { display: block !important; font-size: clamp(2.2rem, 9vw, 3.5rem) !important; line-height: 1.1 !important; }
-            .subtitle     { display: block !important; font-size: 0.95rem !important; }
-            .hero-buttons { display: flex !important; flex-direction: column !important; gap: 0.5rem; align-items: flex-start; margin-top: 1rem; }
-            .btn          { font-size: 0.9rem !important; padding: 0.6rem 1.2rem !important; }
+            .hero-eyebrow { display: block !important; font-size: 0.7rem !important; margin-bottom: 0.2rem !important; }
+            .title        { display: block !important; font-size: clamp(2rem, 9vw, 3rem) !important; line-height: 1 !important; margin-bottom: 0.3rem !important; }
+            .subtitle     { display: block !important; font-size: 0.85rem !important; margin-bottom: 0.5rem !important; }
+            .hero-buttons { display: flex !important; flex-direction: row !important; gap: 0.4rem !important; align-items: flex-start; margin-top: 0.5rem; flex-wrap: wrap; }
+            .btn          { font-size: 0.8rem !important; padding: 0.5rem 1rem !important; }
+            .recent-mods  { flex: 0 0 auto !important; height: auto !important; overflow: visible !important; padding-bottom: 1rem !important; }
             .site-footer  { display: none !important; }
-            .mobile-footer { display: block !important; }
+            .mobile-footer { display: none !important; }
             .carousel-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
             .carousel-btn { font-size: 1rem !important; padding: 0.4rem 0.6rem !important; }
             .carousel-grid .card { animation: none !important; }
@@ -105,13 +77,8 @@
     </header>
 
     <section class="recent-mods">
-        <h2>Most Viewed</h2>
-        <div class="carousel-wrap">
-            <button class="carousel-btn" id="btn-prev">&lt;</button>
-            <div class="carousel-grid" id="carousel-grid"></div>
-            <button class="carousel-btn" id="btn-next">&gt;</button>
-        </div>
-        <div class="carousel-dots" id="carousel-dots"></div>
+        <h2>Hall of Fame</h2>
+        <div class="layout-bottom" id="hall-of-fame"></div>
     </section>
 
     <div class="mobile-footer" style="display:none; text-align:center; padding: 1.5rem 1rem; font-family: VCR, monospace; color: rgba(255,255,255,0.3); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">hellooooo :)</div>
@@ -135,70 +102,15 @@
     <script src="zkp/mods-data.js"></script>
     <script>
         const DIFF_LABELS = { easy:"EASY", normal:"NORMAL", hard:"HARD", erect:"ERECT" };
-
-        // Mezclar random
-        function shuffle(arr) {
-            var a = arr.slice();
-            for (var i = a.length - 1; i > 0; i--) {
-                var j = Math.floor(Math.random() * (i + 1));
-                var t = a[i]; a[i] = a[j]; a[j] = t;
-            }
-            return a;
-        }
-
-        var hof = shuffle(MODS_DATA.filter(m => m.hallOfFame));
-        var perPage = 4;
-        var totalPages = Math.ceil(hof.length / perPage);
-        var currentPage = 0;
-
-        var grid = document.getElementById('carousel-grid');
-        var dotsEl = document.getElementById('carousel-dots');
-        var btnPrev = document.getElementById('btn-prev');
-        var btnNext = document.getElementById('btn-next');
-
-        // Crear dots
-        for (var i = 0; i < totalPages; i++) {
-            var dot = document.createElement('div');
-            dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-            dot.dataset.page = i;
-            dot.addEventListener('click', function() { goTo(parseInt(this.dataset.page)); });
-            dotsEl.appendChild(dot);
-        }
-
-        function goTo(page) {
-            grid.classList.add('fading');
-            setTimeout(function() {
-                currentPage = page;
-                var start = page * perPage;
-                var items = hof.slice(start, start + perPage);
-
-                grid.innerHTML = items.map(m => `
-                    <div class="card card-small" onclick="location.href='zkp/mods/${m.id}.html'">
-                        <div class="image-placeholder" style="background-image:url('zkp/${m.banner}');background-size:cover;background-position:center;"></div>
-                        <div class="card-info">
-                            <h4>${m.name} ${m.diffs.map(d => `<span class="diff-badge diff-${d}">${DIFF_LABELS[d]}</span>`).join(' ')}</h4>
-                        </div>
-                    </div>
-                `).join('');
-
-                document.querySelectorAll('.carousel-dot').forEach(function(d) {
-                    d.classList.toggle('active', parseInt(d.dataset.page) === page);
-                });
-
-                btnPrev.disabled = false;
-                btnNext.disabled = false;
-                // Gris visual si está en extremo
-                btnPrev.style.opacity = page === 0 ? '0.35' : '1';
-                btnNext.style.opacity = page === totalPages - 1 ? '0.35' : '1';
-
-                grid.classList.remove('fading');
-            }, 200);
-        }
-
-        btnPrev.addEventListener('click', function() { goTo(currentPage > 0 ? currentPage - 1 : totalPages - 1); });
-        btnNext.addEventListener('click', function() { goTo(currentPage < totalPages - 1 ? currentPage + 1 : 0); });
-
-        goTo(0);
+        const hof = MODS_DATA.filter(m => m.hallOfFame);
+        document.getElementById('hall-of-fame').innerHTML = hof.map(m => `
+            <div class="card card-small" onclick="location.href='zkp/mods/${m.id}.html'">
+                <div class="image-placeholder" style="background-image:url('zkp/${m.banner}');background-size:cover;background-position:center;"></div>
+                <div class="card-info">
+                    <h4>${m.name} ${m.diffs.map(d => `<span class="diff-badge diff-${d}">${DIFF_LABELS[d]}</span>`).join(' ')}</h4>
+                </div>
+            </div>
+        `).join('');
     </script>
     <script>
     (function() {
