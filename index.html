@@ -23,7 +23,7 @@
         .layout-bottom .card:nth-child(4) { animation-delay: 0.6s; }
         @keyframes cardFloat { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-5px); } }
         @media (max-width: 768px) {
-            .hero { height: auto !important; min-height: unset !important; padding: 2rem 1.2rem 2.5rem !important; overflow: hidden !important; box-sizing: border-box !important; }
+            .hero { height: auto !important; min-height: unset !important; padding: 3.5rem 1.2rem 2.5rem !important; overflow: hidden !important; box-sizing: border-box !important; }
             .hero-media, .hero-shapes, .hero-gif { display: none !important; }
             .hero-content { position: relative !important; max-width: 100% !important; z-index: 10 !important; }
             .hero-eyebrow { display: block !important; font-size: 0.75rem !important; }
@@ -34,20 +34,6 @@
             .layout-bottom .card { animation: none !important; }
             .site-footer  { display: none !important; }
             .mobile-footer { display: block !important; }
-            /* Título igual que antes */
-            .hero-content { position: relative !important; max-width: 100% !important; z-index: 10 !important; }
-            /* 6 mods visibles con scroll interno */
-            .recent-mods { height: auto !important; overflow: visible !important; }
-            .layout-bottom {
-                display: grid !important;
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 0.7rem !important;
-                max-height: 520px !important;
-                overflow-y: auto !important;
-                padding-bottom: 0.5rem !important;
-                scrollbar-width: none !important;
-            }
-            .layout-bottom::-webkit-scrollbar { display: none; }
         }
     </style>
 </head>
