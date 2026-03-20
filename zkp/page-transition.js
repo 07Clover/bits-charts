@@ -1,4 +1,7 @@
 (function() {
+    // No hacer nada en móvil
+    if (window.innerWidth <= 768) return;
+
     var style = document.createElement('style');
     style.textContent = `
         .pt-bar {
@@ -43,7 +46,6 @@
         });
     }
 
-    // Exponer globalmente para que onclick también lo use
     window.ptNavigate = function(href) {
         if (href.startsWith('http') || href.startsWith('#')) {
             window.location.href = href;
@@ -58,7 +60,6 @@
         }, 460);
     };
 
-    // Interceptar links <a>
     document.addEventListener('click', function(e) {
         var link = e.target.closest('a');
         if (!link) return;
@@ -70,7 +71,6 @@
         window.ptNavigate(href);
     });
 
-    // Interceptar onclick con location.href
     document.addEventListener('click', function(e) {
         var el = e.target.closest('[onclick]');
         if (!el) return;
