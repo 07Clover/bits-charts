@@ -58,8 +58,8 @@ body::after {
 .nav-links { list-style: none; display: flex; }
 .nav-links li a {
     font-family: 'VCR', monospace; color: var(--text-body); text-decoration: none;
-    font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;
-    padding: 0.8rem 1rem; display: block; border: 2px solid transparent;
+    font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;
+    padding: 0.3rem 1rem; display: block; border: 2px solid transparent;
     transition: color 0.15s, background 0.15s, border-color 0.15s;
 }
 .nav-links li a::before { content: '> '; color: var(--secondary); opacity: 0; transition: opacity 0.15s; }
@@ -81,7 +81,7 @@ body::after {
 }
 .hero-content {
     position: absolute; left: 4%; top: 50%; transform: translateY(-50%);
-    z-index: 0; text-align: left; max-width: 45%;
+    z-index: 3; text-align: left; max-width: 45%;
 }
 .hero-eyebrow {
     font-family: 'SSS', monospace; font-size: 0.65rem; letter-spacing: 4px;
@@ -106,7 +106,7 @@ body::after {
 .btn {
     font-family: 'Letterstuff', sans-serif; display: inline-flex; align-items: center;
     padding: 0.35rem 0.9rem; font-size: 0.72rem; text-transform: uppercase;
-    letter-spacing: 2px; text-decoration: none; border: 1px solid var(--border);
+    letter-spacing: 2px; text-decoration: none; border: 3px solid var(--border);
     cursor: pointer; transition: transform 0.1s, box-shadow 0.1s, background 0.1s; user-select: none;
 }
 .btn-primary { background-color: var(--primary); color: var(--white); box-shadow: 3px 3px 0 var(--border); }
@@ -188,7 +188,7 @@ body::after {
 .commissions-popup {
     position: fixed !important; bottom: 4rem !important; right: 1.5rem !important;
     top: auto !important; left: auto !important; transform: translateY(30px);
-    background-color: rgba(26, 26, 34, 0.9);
+    background-color: rgba(26, 26, 34, 0.5);
     border: 3px solid var(--border); padding: 1.2rem 1.5rem; width: 17rem;
     box-shadow: 6px 6px 0 var(--border); z-index: 1001;
     opacity: 0; animation: slideInUp 0.5s ease-out forwards;
@@ -478,15 +478,14 @@ body.scrollable .container { padding-bottom: 5rem; }
     .logo-img  { width: 2.4rem !important; height: 2.4rem !important; }
     .logo-text { display: none !important; }
     .nav-links { gap: 0 !important; flex-wrap: nowrap !important; flex: 1; }
-    .nav-links li { flex: 0 0 auto; text-align: center; }
+    .nav-links li { flex: 1; text-align: center; }
     .nav-links li a {
         font-size: 0.8rem !important;
-        padding: 0.3rem 0.5rem !important;
+        padding: 0.3rem 0.1rem !important;
         letter-spacing: 0 !important;
         white-space: nowrap;
-        display: inline-block !important;
+        display: block;
         text-align: center;
-        border-radius: 4px !important;
     }
     .nav-links li a::before { display: none; }
 
@@ -549,7 +548,7 @@ body.scrollable .container { padding-bottom: 5rem; }
         position: relative !important;
         bottom: auto !important;
         margin-top: 0 !important;
-        padding: 0.9rem 1rem 9rem;
+        padding: 0.9rem 1rem;
         font-size: 0.78rem;
     }
     .footer-links { gap: 1.2rem; }
