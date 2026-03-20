@@ -457,7 +457,7 @@ body.scrollable .container { padding-bottom: 5rem; }
 @media (max-width: 768px) {
 
     html { overflow-x: hidden; }
-    body { overflow-x: hidden; width: 100%; overflow: auto !important; height: auto !important; }
+    body { overflow-x: hidden; width: 100%; }
 
     /* ── RESET BROKEN CALC ── */
     :root {
@@ -549,7 +549,7 @@ body.scrollable .container { padding-bottom: 5rem; }
         position: relative !important;
         bottom: auto !important;
         margin-top: 0 !important;
-        padding: 0.9rem 1rem 9rem;
+        padding: 0.9rem 1rem;
         font-size: 0.78rem;
     }
     .footer-links { gap: 1.2rem; }
