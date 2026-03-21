@@ -2,7 +2,7 @@
    BIT'S CHARTS — OPTIMIZED 1280x720
    ============================================= */
 
-@font-face { font-family: 'SSS';         src: url('fonts/sss.ttf') format('truetype'); }
+@font-face { font-family: 'SSS';         src: url('fonts/SSS.ttf') format('truetype'); }
 @font-face { font-family: 'Letterstuff'; src: url('fonts/Letterstuff.otf') format('opentype'); }
 @font-face { font-family: 'VCR';         src: url('fonts/vcr.ttf') format('truetype'); }
 @font-face { font-family: 'DSDigital';   src: url('fonts/DS-DIGI.TTF') format('truetype'); }
@@ -50,7 +50,7 @@ body::after {
 }
 .logo-img:hover { transform: scale(1.1) rotate(-5deg); }
 .logo-text {
-    font-family: 'SSS', 'sss'; font-size: 1.3rem; color: var(--white);
+    font-family: 'SSS', 'SSS'; font-size: 1.3rem; color: var(--white);
     text-decoration: none; text-transform: uppercase; letter-spacing: 2px;
     text-shadow: 2px 2px 0 var(--black), 3px 3px 0 var(--primary); transition: color 0.15s;
 }
@@ -88,7 +88,7 @@ body::after {
     text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem; display: block;
 }
 .title {
-    font-family: 'VCR', 'sss'; font-size: clamp(1.8rem, 3.5vw, 4rem);
+    font-family: 'VCR', 'SSS'; font-size: clamp(1.8rem, 3.5vw, 4rem);
     text-transform: uppercase; letter-spacing: 2px; color: var(--white);
     line-height: 1; margin-bottom: 0.4rem; white-space: nowrap;
     -webkit-text-stroke: 6px var(--black); paint-order: stroke fill;
@@ -104,7 +104,7 @@ body::after {
 }
 .hero-buttons { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: flex-start; position: relative; z-index: 3; }
 .btn {
-    font-family: 'Letterstuff', 'sss'; display: inline-flex; align-items: center;
+    font-family: 'Letterstuff', 'SSS'; display: inline-flex; align-items: center;
     padding: 0.35rem 0.9rem; font-size: 0.72rem; text-transform: uppercase;
     letter-spacing: 2px; text-decoration: none; border: 1px solid var(--border);
     cursor: pointer; transition: transform 0.1s, box-shadow 0.1s, background 0.1s; user-select: none;
@@ -121,7 +121,7 @@ body::after {
     padding: 0.6rem 2rem 0.5rem; overflow: hidden; box-sizing: border-box;
 }
 .recent-mods > h2 {
-    font-family: 'SSS', 'sss'; font-size: 0.9rem; text-transform: uppercase;
+    font-family: 'SSS', 'SSS'; font-size: 0.9rem; text-transform: uppercase;
     letter-spacing: 2px; color: var(--white); display: inline-block; background: var(--surface2);
     padding: 0.1rem 0.6rem; border: 2px solid var(--border); box-shadow: 2px 2px 0 var(--border);
     transform: rotate(-1deg); text-shadow: 2px 2px 0 var(--primary); margin-bottom: 0.5rem;
@@ -145,8 +145,8 @@ body::after {
     text-transform: uppercase; border-bottom: 2px solid var(--border);
 }
 .card-info { padding: 0.2rem 0.4rem; }
-.card-info h3 { font-family: 'Letterstuff', 'sss'; font-size: 0.65rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 1px; line-height: 1.2; }
-.card-info h4 { font-family: 'Letterstuff', 'sss'; font-size: 0.65rem; color: var(--white); text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card-info h3 { font-family: 'Letterstuff', 'SSS'; font-size: 0.65rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 1px; line-height: 1.2; }
+.card-info h4 { font-family: 'Letterstuff', 'SSS'; font-size: 0.65rem; color: var(--white); letter-spacing: 0.2em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .card-info p, .card-small .card-info p { display: none; }
 .diff-badge { display: inline-block; font-family: 'VCR', monospace; font-size: 0.5rem; padding: 1px 4px; border: 2px solid var(--border); text-transform: uppercase; letter-spacing: 1px; vertical-align: middle; }
 .diff-easy { background: var(--score-green); color: var(--black); }
@@ -196,7 +196,7 @@ body::after {
 }
 @keyframes slideInUp { to { opacity: 1; transform: translateY(0); } }
 .commissions-popup h4 {
-    font-family: 'SSS', 'sss'; color: var(--white); font-size: 0.9rem;
+    font-family: 'SSS', 'SSS'; color: var(--white); font-size: 0.9rem;
     margin-bottom: 0.3rem; text-transform: uppercase;
 }
 .commissions-popup p {
@@ -227,7 +227,7 @@ body::after {
 .container { max-width: 75rem; margin: 0 auto; padding: 0.8rem 1.5rem; }
 .page-header { text-align: center; margin: 2rem 0; }
 .page-header h1 {
-    font-family: 'SSS', 'sss'; font-size: clamp(1.5rem, 3vw, 3rem);
+    font-family: 'SSS', 'SSS'; font-size: clamp(1.5rem, 3vw, 3rem);
     color: var(--white); text-transform: uppercase; letter-spacing: 3px;
     text-shadow: 3px 3px 0 var(--black), 5px 5px 0 var(--primary); display: inline-block;
 }
@@ -256,7 +256,7 @@ body::after {
     background: linear-gradient(to bottom, var(--primary), transparent); opacity: 0.3;
 }
 .step h3 {
-    font-family: 'Letterstuff', 'sss'; font-size: 1.1rem; color: var(--white);
+    font-family: 'Letterstuff', 'SSS'; font-size: 1.1rem; color: var(--white);
     margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 2px;
 }
 .step p {
@@ -388,7 +388,7 @@ body.scrollable .container { padding-bottom: 5rem; }
     padding: 0.45rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: middle;
 }
 .song-table tr:hover td { background: rgba(74,241,242,0.04); color: var(--white); }
-.song-table td:first-child { font-family: 'Letterstuff', 'sss'; color: var(--white); }
+.song-table td:first-child { font-family: 'Letterstuff', 'SSS'; color: var(--white); }
 .bpm-val { font-family: 'DSDigital', monospace; color: var(--secondary); font-size: 1rem; text-shadow: 0 0 6px var(--secondary); }
 .mod-sidebar {}
 .sidebar-box {
@@ -397,9 +397,9 @@ body.scrollable .container { padding-bottom: 5rem; }
     overflow: hidden; position: relative;
 }
 .sidebar-box-body strong {
-    -webkit-text-stroke: 2px black;   /* borde negro grueso alrededor */
+    -webkit-text-stroke: 4px black;   /* borde negro grueso alrededor */
     paint-order: stroke fill;            /* pinta borde primero */
-    letter-spacing: 0.4em;              /* letras más separadas */
+    letter-spacing: 0.2em;              /* letras más separadas */
     color: var(--white);                 /* mantiene el color blanco que ya usas */
 }
 .sidebar-box-label {
@@ -443,7 +443,7 @@ body.scrollable .container { padding-bottom: 5rem; }
 .credit-icon { font-size: 1rem; }
 .credit-people { display: flex; flex-direction: column; gap: 0.2rem; }
 .credit-person { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
-.credit-name { font-family: 'Letterstuff', 'sss'; font-size: 0.85rem; color: var(--white); text-transform: uppercase; }
+.credit-name { font-family: 'Letterstuff', 'SSS'; font-size: 0.85rem; color: var(--white); text-transform: uppercase; }
 .credit-detail { font-family: 'SSS', monospace; font-size: 0.72rem; color: rgba(200,200,216,0.5); }
 .carousel-wrap { width: 100%; overflow: hidden; }
 .carousel-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 0.7rem; }
