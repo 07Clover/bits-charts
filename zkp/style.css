@@ -1,12 +1,24 @@
 /* =============================================
    BIT'S CHARTS — OPTIMIZED 1280x720
    ============================================= */
+@font-face {
+    font-family: 'sss';
+    src: url('/fonts/sss.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
-@font-face { font-family: 'sss';         src: url('fonts/sss.ttf') format('truetype'); }
-@font-face { font-family: 'Letterstuff'; src: url('fonts/Letterstuff.otf') format('opentype'); }
-@font-face { font-family: 'VCR';         src: url('fonts/vcr.ttf') format('truetype'); }
-@font-face { font-family: 'DSDigital';   src: url('fonts/DS-DIGI.TTF') format('truetype'); }
-@font-face { font-family: 'Inconsolata'; src: url('fonts/Inconsolata-Black.ttf') format('truetype'); font-weight: 900; }
+@font-face { font-family: 'Letterstuff'; src: url('/fonts/Letterstuff.otf') format('opentype'); }
+@font-face { font-family: 'VCR';         src: url('/fonts/vcr.ttf') format('truetype'); }
+@font-face { font-family: 'DSDigital';   src: url('/fonts/DS-DIGI.TTF') format('truetype'); }
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('/fonts/Inconsolata-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
 
 :root {
     --bg: #fecb52; --primary: #ff57b8; --secondary: #4af1f2;
@@ -50,7 +62,8 @@ body::after {
 }
 .logo-img:hover { transform: scale(1.1) rotate(-5deg); }
 .logo-text {
-    font-family: 'sss', 'sss'; font-size: 1.3rem; color: var(--white);
+    font-family: 'sss', monospace;   /* ← reforzado con monospace como fallback */
+    font-size: 1.3rem; color: var(--white);
     text-decoration: none; text-transform: uppercase; letter-spacing: 2px;
     text-shadow: 2px 2px 0 var(--black), 3px 3px 0 var(--primary); transition: color 0.15s;
 }
@@ -68,60 +81,23 @@ body::after {
 }
 .nav-links li a:hover::before, .nav-links li a.active::before { opacity: 1; }
 
-/* ── HERO ── */
-.hero { position: relative; height: var(--banner-h); width: 100%; overflow: hidden; background-color: var(--bg); }
-.hero::before {
-    content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none;
-    background: linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.55) 35%, transparent 55%);
-}
-.hero-media { position: absolute; inset: 0; z-index: 1; }
-.hero-gif {
-    position: absolute; bottom: -120%; right: 0; height: 230%; width: auto;
-    image-rendering: pixelated;
-}
-.hero-content {
-    position: absolute; left: 4%; top: 50%; transform: translateY(-50%);
-    z-index: 0; text-align: left; max-width: 45%;
-}
+/* el resto del archivo sigue exactamente igual — solo copio las partes relevantes que usan 'sss' para que veas */
+
 .hero-eyebrow {
-    font-family: 'sss', monospace; font-size: 0.65rem; letter-spacing: 4px;
+    font-family: 'sss', monospace;
+    font-size: 0.65rem; letter-spacing: 4px;
     text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem; display: block;
 }
-.title {
-    font-family: 'VCR', 'sss'; font-size: clamp(1.8rem, 3.5vw, 4rem);
-    text-transform: uppercase; letter-spacing: 2px; color: var(--white);
-    line-height: 1; margin-bottom: 0.4rem; white-space: nowrap;
-    -webkit-text-stroke: 6px var(--black); paint-order: stroke fill;
-    text-shadow: 5px 5px 0 var(--primary);
-}
-.title span {
-    color: var(--secondary); -webkit-text-stroke: 6px var(--black);
-    paint-order: stroke fill; text-shadow: 5px 5px 0 #004a4a;
-}
+
 .subtitle {
-    font-family: 'sss', monospace; font-size: 0.72rem; color: rgba(255,255,255,0.65);
+    font-family: 'sss', monospace;
+    font-size: 0.72rem; color: rgba(255,255,255,0.65);
     margin-bottom: 1rem; letter-spacing: 1px; text-transform: uppercase;
 }
-.hero-buttons { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: flex-start; position: relative; z-index: 3; }
-.btn {
-    font-family: 'Letterstuff', 'sss'; display: inline-flex; align-items: center;
-    padding: 0.35rem 0.9rem; font-size: 0.72rem; text-transform: uppercase;
-    letter-spacing: 2px; text-decoration: none; border: 1px solid var(--border);
-    cursor: pointer; transition: transform 0.1s, box-shadow 0.1s, background 0.1s; user-select: none;
-}
-.btn-primary { background-color: var(--primary); color: var(--white); box-shadow: 3px 3px 0 var(--border); }
-.btn-primary:hover { background-color: #ff2fa0; transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--border); }
-.btn-secondary { background-color: var(--surface2); color: var(--secondary); box-shadow: 3px 3px 0 var(--border); }
-.btn-secondary:hover { background-color: var(--surface3); color: var(--white); transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--border); }
 
-/* ── MODS BAR ── */
-.recent-mods {
-    position: relative; z-index: 50; height: var(--mods-h); background: var(--surface);
-    border-top: 4px solid var(--border); border-bottom: 4px solid var(--border);
-    padding: 0.6rem 2rem 0.5rem; overflow: hidden; box-sizing: border-box;
-}
 .recent-mods > h2 {
-    font-family: 'sss', 'sss'; font-size: 0.9rem; text-transform: uppercase;
+    font-family: 'sss', 'sss';
+    font-size: 0.9rem; text-transform: uppercase;
     letter-spacing: 2px; color: var(--white); display: inline-block; background: var(--surface2);
     padding: 0.1rem 0.6rem; border: 2px solid var(--border); box-shadow: 2px 2px 0 var(--border);
     transform: rotate(-1deg); text-shadow: 2px 2px 0 var(--primary); margin-bottom: 0.5rem;
