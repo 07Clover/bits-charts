@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bit's Charts | Fresh Reworked</title>
+    <link rel="icon" type="image/png" href="../img/logo.png">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="scrollable">
+<nav class="navbar">
+    <div class="nav-logo">
+        <a href="../../index.html"><img src="../img/logo.png" alt="Logo" class="logo-img"></a>
+        <a href="../../index.html" class="logo-text">Bit's Charts</a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="../mods.html" class="active">Mods</a></li>
+        <li><a href="../install.html">Install</a></li>
+        <li><a href="../credits.html">Credits</a></li>
+    </ul>
+</nav>
+<div id="mod-root"></div>
+<div class="commissions-popup" id="commPopup">
+    <div class="popup-drag-handle" id="popupHandle">&#9733; COMMISSIONS &#9733;</div>
+    <button class="popup-close" onclick="document.getElementById('commPopup').style.display='none'" title="Close">&#x2715;</button>
+    <h4>Commissions Open!</h4>
+    <p>I make charts and code for Friday Night Funkin'. Need help with your mod?</p>
+    <a href="https://linktr.ee/qm_Bit" class="commission-btn" target="_blank">&gt;&gt; Hit me up on Discord!</a>
+</div>
+<footer class="site-footer">
+    <div class="footer-links">
+        <a href="https://www.youtube.com/@mq-bit" class="footer-link" target="_blank">&gt; YouTube</a>
+        <a href="https://x.com/0CloverSp" class="footer-link" target="_blank">&gt; X (Twitter)</a>
+    </div>
+    <p>&copy; 2026 Bit's Charts. All rights reserved.</p>
+</footer>
+<script src="../mods-data.js"></script>
+<script src="../mod-render.js"></script>
+<script>renderMod("fresh-reworked");</script>
+<script>
+(function() {
+    var popup = document.getElementById('commPopup');
+    var handle = document.getElementById('popupHandle');
+    if (!popup || !handle) return;
+    var drag = false, ox = 0, oy = 0;
+    handle.addEventListener('mousedown', function(e) {
+        var r = popup.getBoundingClientRect();
+        popup.style.transform = 'none';
+        popup.style.top = r.top + 'px'; popup.style.left = r.left + 'px';
+        popup.style.right = 'auto'; popup.style.bottom = 'auto';
+        drag = true; ox = e.clientX - r.left; oy = e.clientY - r.top;
+        e.preventDefault();
+    });
+    document.addEventListener('mousemove', function(e) {
+        if (drag) { popup.style.left=(e.clientX-ox)+'px'; popup.style.top=(e.clientY-oy)+'px'; }
+    });
+    document.addEventListener('mouseup', function() { drag = false; });
+})();
+</script>
+</body>
+</html>

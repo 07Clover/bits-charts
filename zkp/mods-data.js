@@ -1,5 +1,31 @@
 const MODS_DATA = [
     {
+        id: "high-pico-mix",
+        name: "High Pico MIX",
+        author: "Bit",
+        engine: "P-Slice (Psych)",
+        released: "2026",
+        version: "v1.0",
+        banner: "img/mods/high-pico-mix.png",
+        diffs: ["hard"],
+        hallOfFame: true,
+        description: `A chart for the High Pico MIX in Friday Night Funkin'.<br><br>Made with P-Slice Engine. Features custom stage.`,
+        videos: [{ id: "gu1UeNOxlLY", label: "Gameplay Preview" }],
+        songs: [{ num: "01", name: "High Pico MIX", diffs: ["normal"], bpm: 125 }],
+        downloads: [
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1HNOGorMz7B02kmK_O9BH9drkcv_E9L24/view?usp=drive_link", style: "green" },
+            { label: ">  MediaFire",    href: "https://www.mediafire.com/file/pk7gkw7hxdpzy60/High_%2528Pico_MIX%2529_-_Bit_Take.zip/file", style: "secondary" },
+        ],
+        credits: [
+            { role: "Charter",      icon: "📝", people: [{ name: "Bit", detail: "ReChart" },{ name: "Koriwave" },{ name: "Salad0" }] },
+            { role: "Song",         icon: "🎵", people: [{ name: "clover died from fall damage" }] },
+            { role: "Stage",        icon: "🎨", people: [{ name: "JorgeX" }] },
+            { role: "Pico Sprites", icon: "🖼️", people: [{ name: "Mickle Pickle" }] },
+            { role: "Nene Sprites",   icon: "🖼️", people: [{ name: "eehhh idk bro", detail: "FNF Polished Team" }] },
+            { role: "Mom Sprites",   icon: "🖼️", people: [{ name: "Taza0x" }] },
+        ],
+    },
+    {
         id: "pico-4th-song",
         name: "Pico 4th Song",
         author: "Bit",
@@ -43,7 +69,7 @@ const MODS_DATA = [
             { label: ">  MediaFire",    href: "https://www.mediafire.com/file/s0k9owaf3xsui8g/Stickmin_in_2026.zip/file", style: "secondary" },
         ],
         credits: [
-            { role: "Charter", icon: "📝", people: [{ name: "Bit" }, { name: "Kontari" }] },
+            { role: "Charter", icon: "📝", people: [{ name: "Bit" }, { name: "Koriwave" }] },
             { role: "Coder",   icon: "⚙️", people: [{ name: "Bit" }] },
             { role: "Song",    icon: "🎵", people: [{ name: "EthanTheDoodler ft. gastersballsack", detail: "Fanmade" }] },
         ],
@@ -153,7 +179,7 @@ const MODS_DATA = [
         credits: [
             { role: "Charter",    icon: "📝", people: [{ name: "Bit", detail: "Normal" }] },
             { role: "Coder",      icon: "⚙️", people: [{ name: "Bit" }] },
-            { role: "Chart OG",   icon: "🎮", people: [{ name: "kontari" }] },
+            { role: "Chart OG",   icon: "🎮", people: [{ name: "Koriwave" }] },
             { role: "Song",       icon: "🎵", people: [{ name: "xyy" }] },
             { role: "Icons",      icon: "🖼️", people: [{ name: "Tower" }] },
             { role: "BF Sprites", icon: "🖼️", people: [{ name: "GMACK23" }] },
