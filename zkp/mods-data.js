@@ -8,7 +8,7 @@ const MODS_DATA = [
         version: "v1.0",
         banner: "img/mods/high-pico-mix.png",
         diffs: ["hard"],
-        hallOfFame: true,
+        hallOfFame: false,
         description: `A chart for the High Pico MIX in Friday Night Funkin'.<br><br>Made with P-Slice Engine. Features custom stage.`,
         videos: [{ id: "gu1UeNOxlLY", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "High Pico MIX", diffs: ["normal"], bpm: 125 }],
