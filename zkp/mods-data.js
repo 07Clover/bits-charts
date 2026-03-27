@@ -13,11 +13,13 @@ const MODS_DATA = [
         videos: [{ id: "gu1UeNOxlLY", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "High Pico MIX", diffs: ["normal"], bpm: 125 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1HNOGorMz7B02kmK_O9BH9drkcv_E9L24/view?usp=drive_link", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1HNOGorMz7B02kmK_O9BH9drkcv_E9L24/view?usp=drive_link", style: "btn" },
             { label: ">  MediaFire",    href: "https://www.mediafire.com/file/pk7gkw7hxdpzy60/High_%2528Pico_MIX%2529_-_Bit_Take.zip/file", style: "secondary" },
+            { label: ">>>  V-SLICE",    href: "https://www.mediafire.com/file/yn38ph32pyv4d7e/High+(Pico+MIX)+V-Slice+Port.zip/file", style: "yell" },
         ],
         credits: [
             { role: "Charter",      icon: "📝", people: [{ name: "Bit", detail: "ReChart" },{ name: "Koriwave" },{ name: "Salad0" }] },
+            { role: "Port",      icon: "📝", people: [{ name: "Bit", detail: "V-Slice Port" }] },
             { role: "Song",         icon: "🎵", people: [{ name: "clover died from fall damage" }] },
             { role: "Stage",        icon: "🎨", people: [{ name: "JorgeX" }] },
             { role: "Pico Sprites", icon: "🖼️", people: [{ name: "Mickle Pickle" }] },
@@ -39,7 +41,7 @@ const MODS_DATA = [
         videos: [{ id: "mgY8rbEx8RQ", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "Pico 4th Song", diffs: ["easy","normal","hard"], bpm: 216 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/10iK-T0UllTt3AHAPCxTU_XOx7YpVrv3U/view", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/10iK-T0UllTt3AHAPCxTU_XOx7YpVrv3U/view", style: "btn" },
             { label: ">  MediaFire",    href: "https://www.mediafire.com/file/znxm0kctr0nrxn9/Pico+4th+Song+-+Bit+Take.zip/file", style: "secondary" },
         ],
         credits: [
@@ -65,7 +67,7 @@ const MODS_DATA = [
         videos: [{ id: "WSOJgVqwaVk", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "Titular 2026", diffs: ["normal"], bpm: 113 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/16mQ-vXK7jiKeVVN05RF9D-fTGwK0JyxB/view", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/16mQ-vXK7jiKeVVN05RF9D-fTGwK0JyxB/view", style: "btn" },
             { label: ">  MediaFire",    href: "https://www.mediafire.com/file/s0k9owaf3xsui8g/Stickmin_in_2026.zip/file", style: "secondary" },
         ],
         credits: [
@@ -92,7 +94,7 @@ const MODS_DATA = [
             { num: "03", name: "My Heart Beats Like A Drum", diffs: ["normal"], bpm: 132 },
         ],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/15DEWUfYLUAsqwh8vU5YzjsgqYdnyBvAc/view", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/15DEWUfYLUAsqwh8vU5YzjsgqYdnyBvAc/view", style: "btn" },
             { label: ">  MediaFire",    href: "https://www.mediafire.com/file/4puftap9vhffmn7/Ready%252C_Set%252C_GO%2521_-_Bit_Take.rar/file", style: "secondary" },
         ],
         credits: [
@@ -149,7 +151,7 @@ const MODS_DATA = [
         videos: [{ id: "QeM7Mx8hvD8", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "Deux Sex Machina", diffs: ["normal"], bpm: 102 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1Lrs1926QJP9XdrDCC8teQvXWs8DjtNjk/view?usp=drive_link", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1Lrs1926QJP9XdrDCC8teQvXWs8DjtNjk/view?usp=drive_link", style: "btn" },
             { label: ">  MediaFire",    href: "https://www.mediafire.com/file/31hzvvo13ug4blr/Deus_Sex_Machina_-_Bit_Take.zip/file", style: "secondary" },
         ],
         credits: [
@@ -173,7 +175,7 @@ const MODS_DATA = [
         videos: [{ id: "fUvdXhXHxBQ", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "Fresher", diffs: ["normal"], bpm: 120 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/190ny5o5ft-wQ6mOYqzP-xra5qr08rkcv/view", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/190ny5o5ft-wQ6mOYqzP-xra5qr08rkcv/view", style: "btn" },
             { label: ">  MediaFire",    href: "https://www.mediafire.com/file/oqef0orvu9p9ekv/FRESHER.zip/file", style: "secondary" },
         ],
         credits: [
@@ -198,7 +200,7 @@ const MODS_DATA = [
         videos: [{ id: "fZS0LNudcFk", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "2ND Half", diffs: ["hard"], bpm: 196 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1K_8D20FisdNvBbNnIW5BioBbP_LiKapG/view", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1K_8D20FisdNvBbNnIW5BioBbP_LiKapG/view", style: "btn" },
             { label: ">  MediaFire",    href: "https://www.mediafire.com/file/83zqi3sa8218azo/2ND_HALF_-_Bit_Take.zip/file", style: "secondary" },
         ],
         credits: [
@@ -209,7 +211,7 @@ const MODS_DATA = [
         ],
     },
     {
-        id: "green",
+        id: "Green",
         name: "GREEN",
         author: "Bit",
         engine: "P-Slice (Psych)",
@@ -219,9 +221,9 @@ const MODS_DATA = [
         diffs: ["normal"],
         description: "A chart for GREEN.<br><br>Made with P-Slice Engine.",
         videos: [{ id: "35O76bZbTYc", label: "Gameplay Preview" }],
-        songs: [{ num: "01", name: "Green", diffs: ["normal"], bpm: 113 }],
+        songs: [{ num: "01", name: "GREEN", diffs: ["normal"], bpm: 113 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1BJ_7hjW-Kk5zmQASdJcNMfduS3PpN8Uo/view?usp=drive_link", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1BJ_7hjW-Kk5zmQASdJcNMfduS3PpN8Uo/view?usp=drive_link", style: "btn" },
             { label: ">  MediaFire",    href: "https://www.mediafire.com/file/jgdslzm0svjyafm/GREEN_%2528simpie_mix%2529.zip/file", style: "secondary" },
         ],
         credits: [
@@ -244,7 +246,7 @@ const MODS_DATA = [
         videos: [{ id: "fUvdXhXHxBQ", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "Wheel Space", diffs: ["normal"], bpm: 135 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1_onxFZpc8xTIDXep7hiLSnOIZK3EMfFB/view", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1_onxFZpc8xTIDXep7hiLSnOIZK3EMfFB/view", style: "btn" },
             { label: ">  MediaFire",    href: "https://www.mediafire.com/file/ce1t9q2hhc47cll/Wheel_Space.zip/file", style: "secondary" },
         ],
         credits: [
@@ -270,7 +272,7 @@ const MODS_DATA = [
         videos: [{ id: "qTkVMkQ_enE", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "Pause", diffs: ["normal"], bpm: 190 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1MKQFpGkcSzd6H1kNp-LCNvNwyKPi5rg-/view", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1MKQFpGkcSzd6H1kNp-LCNvNwyKPi5rg-/view", style: "btn" },
             { label: ">  MediaFire",    href: "https://www.mediafire.com/file/ng7wu7gewcia652/PAUSE_-_Bit_Take.zip/file", style: "secondary" },
         ],
         credits: [
@@ -295,7 +297,7 @@ const MODS_DATA = [
         videos: [{ id: "apWxMo-nKfE", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "Cocoa (GF Mix)", diffs: ["normal"], bpm: 100 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1f85oa9VfynxNhT2jkWjAz_iW84b-gFLa/view", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1f85oa9VfynxNhT2jkWjAz_iW84b-gFLa/view", style: "btn" },
             { label: ">  MediaFire",    href: "https://www.mediafire.com/file/bgalhi5jqbgjx5o/Cocoa_%2528GF_MIX%2529.zip/file", style: "secondary" },
         ],
         credits: [
@@ -321,7 +323,7 @@ const MODS_DATA = [
             { num: "02", name: "Ground Zero",  diffs: ["normal"], bpm: 173 },
         ],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1y6sfyyVTP-e_GRBA_Z9d03At5dphSwVH/view?usp=drive_link", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1y6sfyyVTP-e_GRBA_Z9d03At5dphSwVH/view?usp=drive_link", style: "btn" },
         ],
         credits: [
             { role: "Charter",               icon: "📝", people: [{ name: "Bit" }] },
@@ -344,7 +346,7 @@ const MODS_DATA = [
         videos: [{ id: "vBRXEtGbngs", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "Desolation", diffs: ["normal"], bpm: 182 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1Sm3bJbWh-r1UE-lkUjRk079qV86noZKL/view?usp=drive_link", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1Sm3bJbWh-r1UE-lkUjRk079qV86noZKL/view?usp=drive_link", style: "btn" },
         ],
         credits: [
             { role: "Charter", icon: "📝", people: [{ name: "Bit", detail: "Normal" }] },
@@ -368,7 +370,7 @@ const MODS_DATA = [
         videos: [{ id: "-b4iV7oONXU", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "Tutorial (Pico Mix)", diffs: ["hard"], bpm: 110 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1eKxAC80uJmvTwGuouLY6z2jMua6HpSr_/view?usp=drive_link", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1eKxAC80uJmvTwGuouLY6z2jMua6HpSr_/view?usp=drive_link", style: "btn" },
         ],
         credits: [
             { role: "Charter",      icon: "📝", people: [{ name: "Bit", detail: "hard" }] },
@@ -392,7 +394,7 @@ const MODS_DATA = [
         videos: [{ id: "AWUM0mOj-2U", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "Otis Remix", diffs: ["normal"], bpm: 130 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1EupEwbLeXRSr1pI01PM57msDEn2rJoaq/view", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1EupEwbLeXRSr1pI01PM57msDEn2rJoaq/view", style: "btn" },
         ],
         credits: [
             { role: "Charter",      icon: "📝", people: [{ name: "Bit", detail: "Normal" }] },
@@ -414,7 +416,7 @@ const MODS_DATA = [
         videos: [{ id: "7qS8RcQTvDs", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "Silly Monster", diffs: ["normal"], bpm: 150 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1ZxXiqcfCCZwq3U01F0f_9tHq4eXEERUv/view", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1ZxXiqcfCCZwq3U01F0f_9tHq4eXEERUv/view", style: "btn" },
         ],
         credits: [
             { role: "Charter",       icon: "📝", people: [{ name: "Bit", detail: "Normal" }] },
@@ -437,7 +439,7 @@ const MODS_DATA = [
         videos: [{ id: "CoTVGhX8tRU", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "You Can't Run", diffs: ["hard"], bpm: 120 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1MkxlRrNlifc6FJ6Hi1IhiC5AG0XzCO23/view?usp=drive_link", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1MkxlRrNlifc6FJ6Hi1IhiC5AG0XzCO23/view?usp=drive_link", style: "btn" },
         ],
         credits: [
             { role: "Charter",       icon: "📝", people: [{ name: "Bit" }] },
@@ -460,7 +462,7 @@ const MODS_DATA = [
         videos: [{ id: "YIOF08cColg", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "Snowed In", diffs: ["hard"], bpm: 130 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1pnW6jipJD11A6FGshpR7_6u2D7JqKTYZ/view?usp=drive_link", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1pnW6jipJD11A6FGshpR7_6u2D7JqKTYZ/view?usp=drive_link", style: "btn" },
         ],
         credits: [
             { role: "Charter",       icon: "📝", people: [{ name: "Bit", detail: "hard" }] },
@@ -484,7 +486,7 @@ const MODS_DATA = [
         videos: [{ id: "il_Iifh77Fc", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "Skybreaker", diffs: ["hard"], bpm: 190 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1ATcYxS8b7NzNDW6noGvoN2vtiSoipfKq/view?usp=drive_link", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1ATcYxS8b7NzNDW6noGvoN2vtiSoipfKq/view?usp=drive_link", style: "btn" },
         ],
         credits: [
             { role: "Charter",       icon: "📝", people: [{ name: "Bit", detail: "hard" }] },
@@ -508,7 +510,7 @@ const MODS_DATA = [
         videos: [{ id: "0cnB0c1Yk_o", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "Defeat (Pico Mix)", diffs: ["normal"], bpm: 131 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1wXzx_P_Uwt95cJO5U1Y5ZfHivQiA6Av-/view", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1wXzx_P_Uwt95cJO5U1Y5ZfHivQiA6Av-/view", style: "btn" },
         ],
         credits: [
             { role: "Charter",       icon: "📝", people: [{ name: "Bit", detail: "Normal" }] },
@@ -532,7 +534,7 @@ const MODS_DATA = [
         videos: [{ id: "f9r1IOxtN_4", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "Casanova (Pico Mix)", diffs: ["normal"], bpm: 120 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1nuDKl9JshYfx43Ihd10JnHIZXVKkqLL7/view", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1nuDKl9JshYfx43Ihd10JnHIZXVKkqLL7/view", style: "btn" },
         ],
         credits: [
             { role: "Charter",          icon: "📝", people: [{ name: "Bit", detail: "Normal" }] },
@@ -557,7 +559,7 @@ const MODS_DATA = [
         videos: [{ id: "3fZesXrq2hY", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "Fresh Reworked", diffs: ["normal"], bpm: 130 }],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1uvX9eChDyPftNzfJMm4QC1zIQXtBRkg7/view", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1uvX9eChDyPftNzfJMm4QC1zIQXtBRkg7/view", style: "btn" },
         ],
         credits: [
             { role: "Charter", icon: "📝", people: [{ name: "Bit", detail: "Normal" }] },
@@ -583,7 +585,7 @@ const MODS_DATA = [
             { num: "02", name: "Cassette Girl", diffs: ["normal"], bpm: 86 },
         ],
         downloads: [
-            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1NtWXl7K3sPbGal2FvIJAkIzA97nPCRrJ/view?usp=drive_link", style: "green" },
+            { label: ">> Google Drive", href: "https://drive.google.com/file/d/1NtWXl7K3sPbGal2FvIJAkIzA97nPCRrJ/view?usp=drive_link", style: "btn" },
         ],
         credits: [
             { role: "Charter",       icon: "📝", people: [{ name: "Bit", detail: "Normal" }] },

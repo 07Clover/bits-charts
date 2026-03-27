@@ -1,8 +1,19 @@
-const DIFF_LABELS  = { easy:"EASY", normal:"NORMAL", hard:"HARD", erect:"ERECT" };
-const DIFF_CLASSES = { easy:"diff-easy", normal:"diff-normal", hard:"diff-hard", erect:"diff-erect" };
+const DIFF_LABELS  = { 
+    easy: "EASY", 
+    normal: "NORMAL", 
+    hard: "HARD", 
+    erect: "ERECT" 
+};
+
+const DIFF_CLASSES = { 
+    easy: "diff-easy", 
+    normal: "diff-normal", 
+    hard: "diff-hard", 
+    erect: "diff-erect" 
+};
 
 function badge(d) {
-    return `<span class="diff-badge ${DIFF_CLASSES[d]}">${DIFF_LABELS[d]}</span>`;
+    return `<span class="diff-badge ${DIFF_CLASSES[d] || ''}">${DIFF_LABELS[d] || d.toUpperCase()}</span>`;
 }
 
 function renderMod(modId) {
@@ -66,11 +77,25 @@ function renderMod(modId) {
             <div class="credits-list">${creditsRows}</div>
         </div>` : '';
 
-    const dlButtons = (MOD.downloads || []).filter(d => d.href).map(d => `
-        <a href="${d.href}" class="download-btn ${d.style === 'secondary' ? 'secondary' : ''}" target="_blank">${d.label}</a>
-    `).join('');
+    // ==================== DESCARGAS MEJORADAS ====================
+    const dlButtons = (MOD.downloads || []).filter(d => d.href).map(d => {
+        let styleClass = '';
 
-    // Fix banner path — mods-data.js uses "img/..." but mod pages are inside mods/
+        if (d.style) {
+            styleClass = d.style;        // "secondary", "yell", "green", etc.
+        }
+        // Si no tiene style, queda como download-btn por defecto (verde)
+
+        return `
+            <a href="${d.href}" 
+               class="download-btn ${styleClass}" 
+               target="_blank" 
+               rel="noopener noreferrer">
+                ${d.label}
+            </a>`;
+    }).join('');
+
+    // Fix banner path
     const bannerFixed = banner.replace(/src="img\//g, 'src="../img/');
 
     document.getElementById('mod-root').innerHTML = `
@@ -113,7 +138,13 @@ function renderMod(modId) {
                         <div class="sidebar-box-label" style="background:var(--primary);color:var(--white);">&gt; HEEEYY BRO</div>
                         <div class="sidebar-box-body" style="text-align:center;">
                             <p style="font-family:'SSS',monospace;color:var(--white);font-size:0.85rem;margin-bottom:0.8rem;line-height:1.6;">ples donate 🙏</p>
-                            <a href="https://www.paypal.com/paypalme/JoseCaceres170dp" class="download-btn" target="_blank" style="background:var(--score-green);color:var(--black);">&gt;&gt; PayPal Donate</a>
+                            <a href="https://www.paypal.com/paypalme/JoseCaceres170dp" 
+                               class="download-btn" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               style="background:var(--score-green);color:var(--black);">
+                                &gt;&gt; PayPal Donate
+                            </a>
                         </div>
                     </div>
                 </div>

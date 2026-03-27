@@ -9,11 +9,26 @@
 @font-face { font-family: 'Inconsolata'; src: url('fonts/Inconsolata-Black.ttf') format('truetype'); font-weight: 900; }
 
 :root {
-    --bg: #fecb52; --primary: #ff57b8; --secondary: #4af1f2;
-    --surface: #1a1a22; --surface2: #23232e; --surface3: #2e2e3d;
-    --white: #fff; --black: #000; --border: #000;
-    --score-green: #a8ff3e; --score-orange: #ffb347; --text-body: #c8c8d8;
-    --navbar-h: 3.5rem; --footer-h: 3.2rem; --mods-h: 30vh;
+    --bg: #fecb52; 
+    --primary: #ff57b8; 
+    --secondary: #4af1f2; 
+    --yell: #fecb52;
+    
+    --surface: #1a1a22; 
+    --surface2: #23232e; 
+    --surface3: #2e2e3d;
+    --white: #fff; 
+    --black: #000; 
+    --border: #000;
+    
+    --score-green: #a8ff3e; 
+    --score-orange: #ffb347; 
+    --score-yellow: #ffd700; 
+    --text-body: #c8c8d8;
+    
+    --navbar-h: 3.5rem; 
+    --footer-h: 3.2rem; 
+    --mods-h: 30vh;
     --banner-h: calc(100vh - var(--navbar-h) - var(--footer-h) - var(--mods-h));
 }
 
@@ -148,13 +163,26 @@ body::after {
 .card-info h3 { font-family: 'Letterstuff', 'SSS'; font-size: 0.65rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 1px; line-height: 1.2; }
 .card-info h4 { font-family: 'Letterstuff', 'SSS'; font-size: 0.65rem; color: var(--white); letter-spacing: 0.2em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .card-info p, .card-small .card-info p { display: none; }
-.diff-badge { display: inline-block; font-family: 'VCR', monospace; font-size: 0.5rem; padding: 1px 4px; border: 2px solid var(--border); text-transform: uppercase; letter-spacing: 1px; vertical-align: middle; }
-.diff-easy { background: var(--score-green); color: var(--black); }
-.diff-normal { background: var(--secondary); color: var(--black); }
-.diff-hard { background: var(--score-orange); color: var(--black); }
-.diff-erect { background: var(--primary); color: var(--white); }
+
+/* Difficulty Badges */
+.diff-badge { 
+    display: inline-block; 
+    font-family: 'VCR', monospace; 
+    font-size: 0.5rem; 
+    padding: 1px 4px; 
+    border: 2px solid var(--border); 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    vertical-align: middle; 
+}
+.diff-easy    { background: var(--score-green); color: var(--black); }
+.diff-normal  { background: var(--secondary); color: var(--black); }
+.diff-hard    { background: var(--score-orange); color: var(--black); }
+.diff-erect   { background: var(--primary); color: var(--white); }
+.diff-yell    { background: var(--yell); color: var(--black); }
 .diff-obsolete { background: #ff0000; color: var(--black); }
-.obsolete {text-decoration: line-through; opacity: 0.7;}
+.obsolete { text-decoration: line-through; opacity: 0.7; }
+
 .view-all-container { text-align: right; margin-top: 0.3rem; }
 .view-all-link {
     font-family: 'VCR', monospace; color: var(--secondary); font-size: 0.7rem;
@@ -182,6 +210,57 @@ body::after {
 .site-footer p {
     font-family: 'SSS', monospace; font-size: 0.65rem; color: rgba(255,255,255,0.25);
     letter-spacing: 1px; text-transform: uppercase;
+}
+
+/* ── DOWNLOAD BUTTONS (EDITADO SEGÚN TU PEDIDO) ── */
+.download-btn {
+    display: block; 
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'VCR', monospace; 
+    background: var(--score-green);
+    color: var(--black); 
+    border: 3px solid var(--border); 
+    box-shadow: 4px 4px 0 var(--border);
+    padding: 0.7rem 1rem; 
+    text-decoration: none; 
+    font-size: 0.8rem;
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    text-align: center;
+    transition: all 0.12s; 
+    margin-bottom: 0.6rem;
+}
+
+.download-btn:hover { 
+    transform: translate(-2px,-2px); 
+    box-shadow: 6px 6px 0 var(--border); 
+}
+
+/* Verde por defecto */
+.download-btn.green,
+.download-btn:not(.secondary):not(.yell) {
+    background: var(--score-green);
+    color: var(--black);
+}
+
+/* AZUL con texto negro (para secondary) */
+.download-btn.secondary {
+    background: #00aaff;     /* Azul vibrante */
+    color: #000000;          /* Texto negro */
+}
+.download-btn.secondary:hover {
+    background: #0088dd;
+    color: #000000;
+}
+
+/* Amarillo (yell) */
+.download-btn.yell {
+    background: var(--yell);
+    color: var(--black);
+}
+.download-btn.yell:hover {
+    background: #ffe066;
 }
 
 /* ── POPUP OPTIMIZADO ── */
@@ -371,8 +450,9 @@ body.scrollable .container { padding-bottom: 5rem; }
     color: var(--white); padding: 2px 10px; border: 2px solid var(--border);
     text-transform: uppercase;
 }
-.mod-section-label.cyan { background: var(--secondary); color: var(--black); }
-.mod-section-label.green { background: var(--score-green); color: var(--black); }
+.mod-section-label.cyan   { background: var(--secondary); color: var(--black); }
+.mod-section-label.green  { background: var(--score-green); color: var(--black); }
+.mod-section-label.yellow { background: var(--score-yellow); color: var(--black); }
 .mod-section p {
     font-family: 'SSS', monospace; color: var(--text-body); font-size: 0.85rem;
     line-height: 1.8; margin-top: 0.4rem;
@@ -390,17 +470,11 @@ body.scrollable .container { padding-bottom: 5rem; }
 .song-table tr:hover td { background: rgba(74,241,242,0.04); color: var(--white); }
 .song-table td:first-child { font-family: 'Letterstuff', 'SSS'; color: var(--white); }
 .bpm-val { font-family: 'DSDigital', monospace; color: var(--secondary); font-size: 1rem; text-shadow: 0 0 6px var(--secondary); }
-.mod-sidebar {}
+
 .sidebar-box {
     background: var(--surface); border: 3px solid var(--border);
     box-shadow: 4px 4px 0 var(--border); margin-bottom: 1.2rem;
     overflow: hidden; position: relative;
-}
-.sidebar-box-body strong {
-    -webkit-text-stroke: 4px black;   /* borde negro grueso alrededor */
-    paint-order: stroke fill;            /* pinta borde primero */
-    letter-spacing: 0.2em;              /* letras más separadas */
-    color: var(--white);                 /* mantiene el color blanco que ya usas */
 }
 .sidebar-box-label {
     font-family: 'VCR', monospace; font-size: 0.6rem; letter-spacing: 2px; color: var(--white);
@@ -413,16 +487,7 @@ body.scrollable .container { padding-bottom: 5rem; }
     line-height: 1.7; margin-bottom: 0.4rem;
 }
 .sidebar-box-body p strong { color: var(--secondary); font-family: 'VCR', monospace; font-size: 0.65rem; }
-.download-btn {
-    display: block; font-family: 'VCR', monospace; background: var(--score-green);
-    color: var(--black); border: 3px solid var(--border); box-shadow: 4px 4px 0 var(--border);
-    padding: 0.7rem 1rem; text-decoration: none; font-size: 0.8rem;
-    text-transform: uppercase; letter-spacing: 2px; text-align: center;
-    transition: all 0.12s; margin-bottom: 0.6rem;
-}
-.download-btn:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--border); }
-.download-btn.secondary { background: var(--surface2); color: var(--secondary); }
-.download-btn.secondary:hover { background: var(--surface3); color: var(--white); }
+
 .back-link {
     display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'VCR', monospace;
     font-size: 0.7rem; color: var(--text-body); text-decoration: none;
@@ -465,7 +530,6 @@ body.scrollable .container { padding-bottom: 5rem; }
     html { overflow-x: hidden; }
     body { overflow-x: hidden; width: 100%; }
 
-    /* ── RESET BROKEN CALC ── */
     :root {
         --navbar-h: 3.2rem;
         --footer-h: 0px;
@@ -474,7 +538,6 @@ body.scrollable .container { padding-bottom: 5rem; }
         --bg: #0a0a0f;
     }
 
-    /* ── NAVBAR ── */
     .navbar {
         height: auto !important;
         padding: 0.6rem 1rem !important;
@@ -496,7 +559,6 @@ body.scrollable .container { padding-bottom: 5rem; }
     }
     .nav-links li a::before { display: none; }
 
-    /* ── HERO — show title properly ── */
     .hero {
         height: auto !important;
         min-height: unset !important;
@@ -537,7 +599,6 @@ body.scrollable .container { padding-bottom: 5rem; }
     }
     .btn { font-size: 0.9rem !important; padding: 0.6rem 1.2rem !important; }
 
-    /* ── HALL OF FAME ── */
     .recent-mods { padding: 1.2rem 1rem !important; background: #0a0a0f !important; }
     .recent-mods h2 { font-size: 1.2rem; margin-bottom: 0.9rem; }
     .layout-bottom {
@@ -550,7 +611,6 @@ body.scrollable .container { padding-bottom: 5rem; }
     .layout-bottom .card { animation: none !important; }
     .view-all-container { background: #0a0a0f !important; padding: 0.5rem 1rem 1rem; }
 
-    /* ── FOOTER — always at bottom ── */
     .site-footer {
         position: relative !important;
         bottom: auto !important;
@@ -560,7 +620,6 @@ body.scrollable .container { padding-bottom: 5rem; }
     }
     .footer-links { gap: 1.2rem; }
 
-    /* ── SCROLLABLE pages ── */
     body.scrollable {
         display: flex;
         flex-direction: column;
@@ -569,69 +628,12 @@ body.scrollable .container { padding-bottom: 5rem; }
     body.scrollable .container { flex: 1 0 auto; }
     body.scrollable .site-footer { flex-shrink: 0; }
 
-    /* ── MODS GRID ── */
-    .mods-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 0.5rem; }
-    .mods-grid .card-featured { grid-column: span 2 !important; grid-row: span 1 !important; }
-    .mods-grid .card-featured .image-placeholder { aspect-ratio: 16/7 !important; }
-
-    /* ── CARDS ── */
-    .card-info { padding: 0.45rem 0.55rem; }
-    .card-info h4 { font-size: 0.82rem; line-height: 1.3; }
-    .card-info h3 { font-size: 0.88rem; }
-    .card-info p  { font-size: 0.72rem; }
-    .diff-badge   { font-size: 0.62rem; padding: 0.12rem 0.38rem; }
-    .image-placeholder { aspect-ratio: 16/9; }
-
-    /* ── CONTAINER ── */
-    .container { padding: 0.9rem; }
-    .page-header h1 { font-size: 1.5rem; }
-    .page-header .subtitle { font-size: 0.9rem; }
-
-    /* ── MOD PAGE ── */
     .mod-layout { display: flex !important; flex-direction: column !important; gap: 1rem; width: 100%; }
     .mod-main   { width: 100% !important; min-width: 0; }
     .mod-sidebar { width: 100% !important; min-width: 0; }
     .mod-banner { height: 48vw !important; min-height: 150px; }
-    .mod-banner-title { padding: 0.8rem 1rem !important; }
-    .mod-banner-title h1 { font-size: 1.5rem !important; line-height: 1.2; text-shadow: 2px 2px 0 #000, 0 0 12px rgba(0,0,0,0.9) !important; }
-    .mod-banner-meta { font-size: 0.78rem !important; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
+    .mod-banner-title h1 { font-size: 1.5rem !important; line-height: 1.2; }
     .mod-video-wrap { width: 100%; position: relative; padding-top: 56.25%; height: 0; overflow: hidden; margin-bottom: 0.5rem; }
     .mod-video-wrap iframe { position: absolute !important; top: 0; left: 0; width: 100% !important; height: 100% !important; }
-    .mod-section p { font-size: 0.92rem !important; line-height: 1.7; }
-    .song-table { font-size: 0.78rem; width: 100%; }
-    .back-link { font-size: 0.82rem; margin-bottom: 0.8rem; display: block; }
-    .sidebar-box-label { font-size: 0.78rem; }
-    .sidebar-box-body p { font-size: 0.85rem; }
     .download-btn { font-size: 0.82rem; padding: 0.6rem 1rem; width: 100%; box-sizing: border-box; }
-    .credit-name { font-size: 0.92rem; }
-    .credit-detail { font-size: 0.76rem; }
-    .credit-role-label { font-size: 0.75rem; min-width: 5.5rem; }
-
-    /* ── INSTALL ── */
-    .step { padding: 1rem; }
-    .step h3 { font-size: 1.05rem; }
-    .step p  { font-size: 0.9rem; line-height: 1.7; }
-    .code-block { font-size: 0.68rem; word-break: break-all; padding: 0.5rem; }
-    .engine-btn { font-size: 0.82rem; padding: 0.6rem 1rem; }
-
-    /* ── CREDITS ── */
-    .credits-mod-header h2 { font-size: 0.9rem; }
-
-    /* ── POPUP ── */
-    .commissions-popup {
-        position: fixed !important;
-        width: 88vw !important;
-        left: 6vw !important;
-        right: auto !important;
-        top: auto !important;
-        bottom: 0.8rem !important;
-        transform: none !important;
-        animation: slideUpMobile 0.5s ease forwards !important;
-        font-size: 0.88rem;
-        z-index: 999;
-    }
-    @keyframes slideUpMobile {
-        from { opacity: 0; transform: translateY(80px); }
-        to   { opacity: 1; transform: translateY(0); }
-    }
 }
