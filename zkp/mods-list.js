@@ -1,4 +1,5 @@
 const MODS_LIST = [
+    "mods/high-pico-mix.html",
     "mods/pico-4th-song.html",
     "mods/deux-sex-machina.html",
     "mods/fresher.html",

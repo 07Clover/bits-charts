@@ -10,7 +10,7 @@ const MODS_DATA = [
         diffs: ["hard"],
         hallOfFame: false,
         description: `A chart for the High Pico MIX in Friday Night Funkin'.<br><br>Made with P-Slice Engine. Features custom stage.`,
-        videos: [{ id: "gu1UeNOxlLY", label: "Gameplay Preview" }],
+        videos: [{ id: "P6Nt1G8u6PQ", label: "Gameplay Preview" }],
         songs: [{ num: "01", name: "High Pico MIX", diffs: ["normal"], bpm: 125 }],
         downloads: [
             { label: ">> Google Drive", href: "https://drive.google.com/file/d/1HNOGorMz7B02kmK_O9BH9drkcv_E9L24/view?usp=drive_link", style: "btn" },
