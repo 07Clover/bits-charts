@@ -1,7 +1,7 @@
 const MODS_DATA = [
     {
         id: "nerves-26",
-        hallOfFame: true,
+        hallOfFame: false,
         name: "Nerves 2026",
         author: "Bit",
         engine: "V-Slice",
