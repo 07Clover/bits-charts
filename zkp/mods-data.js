@@ -1,5 +1,28 @@
 const MODS_DATA = [
     {
+        id: "nerves-26",
+        hallOfFame: true,
+        name: "Nerves 2026",
+        author: "Bit",
+        engine: "V-Slice",
+        released: "2026",
+        version: "v1.0",
+        banner: "img/mods/nerves-26.png",
+        diffs: ["hard"],
+        description: "fumar es malo we nononono",
+        videos: [{ id: "Xijpz-l2uRc", label: "Gameplay Preview" }],
+        songs: [{ num: "01", name: "Nerves 2026", diffs: ["easy", "normal", "hard"], bpm: 110 }],
+        downloads: [
+            { label: ">> V-Slice", href: "https://www.mediafire.com/file/wkh7mr8lpg8qynu/Nerves+2026+-+Bit's+Take.zip/file", style: "btn" },
+        ],
+        credits: [
+            { role: "Charter",      icon: "📝", people: [{ name: "Bit", detail: "hard" }] },
+            { role: "Coder",        icon: "⚙️", people: [{ name: "Bit" }] },
+            { role: "Song",         icon: "🎵", people: [{ name: "ImPaper" }, { name: "atsuover" }] },
+            { role: "Assets", icon: "🖼️", people: [{ name: "FNF Polished" }] },
+        ],
+    },
+    {
         id: "tutorial-pico-mix",
         hallOfFame: true,
         name: "Tutorial (Pico Mix) V2",
@@ -36,7 +59,7 @@ const MODS_DATA = [
         version: "v1.0",
         banner: "img/mods/playtime-26.png",
         diffs: ["normal"],
-        hallOfFame: false,
+        hallOfFame: true,
         description: "Playime gggghghgh.<br><br>Made with V-Slice Engine.",
         videos: [{ id: "rAearYgvtZA", label: "Gameplay Preview" }],
         songs: [
